@@ -31,12 +31,12 @@ public class UnshuffledCardProviderTest {
 	public void shouldIncludeAllRanksForEachSuit() {
 		Map<Suit, Set<Rank>> ranksForEachSuit = extractAllSuitsAndRanks();
 		for(Suit s : Suit.values()) {
-			assertEquals(AllRanks(), ranksForEachSuit.get(s));	
+			assertEquals(allRanks(), ranksForEachSuit.get(s));	
 		}
 		
 	}
 
-	private HashSet<Rank> AllRanks() {
+	private HashSet<Rank> allRanks() {
 		return new HashSet<Rank>(Arrays.asList(Rank.values()));
 	}
 	
