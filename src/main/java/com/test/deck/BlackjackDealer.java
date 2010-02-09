@@ -1,13 +1,14 @@
 package com.test.deck;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.test.commons.Validate;
 
 public final class BlackjackDealer implements Player {
 	private Deck deck;
-	private List<PlayingCard> cards;
+	private List<PlayingCard> cards = new ArrayList<PlayingCard>();
 	private List<? extends Player> otherPlayers;
 	
 	public BlackjackDealer(Deck deck, List<? extends Player> otherPlayers) {
@@ -26,7 +27,19 @@ public final class BlackjackDealer implements Player {
 	}
 
 	public void dealOpeninghand() {
-		
+		dealTwoRounds();
+	}
+
+	private void dealTwoRounds() {
+		for(int i = 0 ; i < 2 ; i++ ) {
+			dealOneRound();	
+		}
+	}
+	
+	private void dealOneRound() {
+		for(Player p : allPlayersIncludingDealer()) {
+			p.acceptCard(deck.draw());
+		}
 	}
 	
 	public void acceptCard(PlayingCard card) {
@@ -35,8 +48,12 @@ public final class BlackjackDealer implements Player {
 	
 	private List<Player> allPlayersIncludingDealer() {
 		 List<Player> players = new ArrayList<Player>();
-		 players.add(this);
 		 players.addAll(otherPlayers);
+		 players.add(this);
 		 return players;
+	}
+
+	public List<PlayingCard> getCards() {
+		return Collections.unmodifiableList(cards);
 	}
 }

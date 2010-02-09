@@ -1,7 +1,15 @@
 package com.test.deck;
 
+import java.util.List;
+
 public interface Player {
 
-	public abstract void acceptCard(PlayingCard card);
+	/**
+	 * FIXME: Not sure if the meaning of player cards has an importance 
+	 * in blackjack, so leaving List in doubt
+	 * @return
+	 */
+	List<PlayingCard> getCards();
+	void acceptCard(PlayingCard card);
 
 }

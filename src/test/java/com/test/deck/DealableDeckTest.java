@@ -17,16 +17,25 @@ import org.mockito.Mockito;
 
 public class DealableDeckTest {
 
-
-	
 	@Test
 	public void shouldDrawFirstCardFromDeck() {
-		Deck deck = new DealableDeck(cardProvider());
+		Deck deck = createDeck();
 		assertThat(deck.draw(), is(aceOfClubs()));
 		assertFalse(deck.getCards().contains(aceOfClubs()));
 		assertEquals(cards().size()-1, deck.getCards().size());
 	}
 	
+	@Test(expected=NoMoreCardsException.class)
+	public void shouldThrowNoMoreCardsExceptionWhenNoMoreCardsToDraw() {
+		Deck deck = createDeck();
+		for(int i = 0 ; i < cards().size()+1 ; i++) {
+			deck.draw();
+		}
+	}
+
+	private DealableDeck createDeck() {
+		return new DealableDeck(cardProvider());
+	}
 	
 	private CardProvider cardProvider() {
 		CardProvider cardProvider = mock(CardProvider.class);

@@ -8,11 +8,11 @@ public final class DealableDeck implements Deck {
 
 	private Stack<PlayingCard> cards;
 	
-	public DealableDeck(CardProvider deckToShuffle) {
+	public DealableDeck(CardProvider cardProvider) {
 		super();
 		cards = new Stack<PlayingCard>();
-		for(int i = deckToShuffle.getCards().size()-1 ; i >=0 ; i--) {
-			cards.add(deckToShuffle.getCards().get(i));
+		for(int i = cardProvider.getCards().size()-1 ; i >=0 ; i--) {
+			cards.add(cardProvider.getCards().get(i));
 		}
 	}
 
@@ -21,6 +21,9 @@ public final class DealableDeck implements Deck {
 	}
 
 	public PlayingCard draw() {
+		if(cards.isEmpty()) {
+			throw new NoMoreCardsException();
+		}
 		return cards.pop();
 	}
 

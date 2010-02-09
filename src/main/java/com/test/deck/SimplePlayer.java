@@ -1,5 +1,6 @@
 package com.test.deck;
 
+import java.util.Collections;
 import java.util.List;
 
 public final class SimplePlayer implements Player {
@@ -11,5 +12,9 @@ public final class SimplePlayer implements Player {
 	 */
 	public void acceptCard(PlayingCard card) {
 		cards.add(card);
+	}
+
+	public List<PlayingCard> getCards() {
+		return Collections.unmodifiableList(cards);
 	}
 }
