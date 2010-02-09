@@ -1,6 +1,6 @@
 package com.test.deck;
 
-import static com.test.deck.ShuffledCardProvider.shuffledDeck;
+import static com.test.deck.ShuffledCardProvider.shuffledCardProvider;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
@@ -11,7 +11,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -20,8 +19,8 @@ public class ShuffledCardProviderTest {
 
 	@Test
 	public void shouldNotAlterCards() {
-		CardProvider shuffledDeck = shuffledDeck(originalDeck());
-		Assert.assertThat(setOf(shuffledDeck.getCards()), is(setOf(sampleCards())));
+		CardProvider shuffledCardProvider = shuffledCardProvider(originalCardProvider());
+		Assert.assertThat(setOf(shuffledCardProvider.getCards()), is(setOf(sampleCards())));
 	}
 	
 	/**
@@ -34,8 +33,8 @@ public class ShuffledCardProviderTest {
 	 */
 	@Test
 	public void orderOfCardsShouldBeDifferent() {
-		CardProvider shuffledDeck = ShuffledCardProvider.shuffledDeck(originalDeck());
-		assertThat(shuffledDeck.getCards(), is(not(sampleCards())));
+		CardProvider shuffledCardProvider = ShuffledCardProvider.shuffledCardProvider(originalCardProvider());
+		assertThat(shuffledCardProvider.getCards(), is(not(sampleCards())));
 	}
 
 	
@@ -43,10 +42,10 @@ public class ShuffledCardProviderTest {
 		return new HashSet<PlayingCard>(cards);
 	}
 	
-	private CardProvider originalDeck() {
-		CardProvider deck = mock(CardProvider.class);
-		Mockito.when(deck.getCards()).thenReturn(sampleCards()); 
-		return deck;
+	private CardProvider originalCardProvider() {
+		CardProvider cardProvider = mock(CardProvider.class);
+		Mockito.when(cardProvider.getCards()).thenReturn(sampleCards()); 
+		return cardProvider;
 	}
 	
 	private List<PlayingCard> sampleCards() {

@@ -1,7 +1,7 @@
 package com.test.deck;
 
-import static com.test.deck.UnshuffledCardProvider.deckWithJokers;
-import static com.test.deck.UnshuffledCardProvider.deckWithoutJokers;
+import static com.test.deck.UnshuffledCardProvider.cardsWithJokers;
+import static com.test.deck.UnshuffledCardProvider.cardsWithoutJokers;
 import static junit.framework.Assert.assertEquals;
 
 import java.util.Arrays;
@@ -18,17 +18,17 @@ public class UnshuffledCardProviderTest {
 	private static final int EXPECTED_NUMBER_OF_RANKS_PER_SUIT = 13;
 
 	@Test
-	public void deckWithoutJokersShouldhave52Cards() {
-		assertEquals(52, deckWithoutJokers().getCards().size());
+	public void shouldProvide52CardsWhenNotAskingForJokers() {
+		assertEquals(52, cardsWithoutJokers().getCards().size());
 	}
 	
 	@Test
-	public void deckWithJokersShouldhave54Cards() {
-		assertEquals(54, deckWithJokers().getCards().size());
+	public void shouldProvide54CardsWhenAskingForJokers() {
+		assertEquals(54, cardsWithJokers().getCards().size());
 	}
 	
 	@Test
-	public void deckShouldIncludeAllRanksForEachSuit() {
+	public void shouldIncludeAllRanksForEachSuit() {
 		Map<Suit, Set<Rank>> ranksForEachSuit = extractAllSuitsAndRanks();
 		for(Suit s : Suit.values()) {
 			assertEquals(AllRanks(), ranksForEachSuit.get(s));	
@@ -42,7 +42,7 @@ public class UnshuffledCardProviderTest {
 	
 	
 	@Test
-	public void deckShouldInclude13RanksForEachSuit() {
+	public void shouldInclude13RanksForEachSuit() {
 		Map<Suit, Set<Rank>> ranksForEachSuit = extractAllSuitsAndRanks();
 		assertEquals(numberOfSuits(), ranksForEachSuit.keySet().size());
 		for(Set<Rank> ranks : ranksForEachSuit.values()) {
@@ -60,7 +60,7 @@ public class UnshuffledCardProviderTest {
 
 	private Map<Suit, Set<Rank>> extractAllSuitsAndRanks() {
 		Map<Suit, Set<Rank>> ranksForEachSuit = new HashMap<Suit, Set<Rank>>();
-		for(PlayingCard p : deckWithoutJokers().getCards()) {
+		for(PlayingCard p : cardsWithoutJokers().getCards()) {
 			if(p.isStandardCard()) { // FIXME: smell that something is not right...
 				StandardCard card = (StandardCard) p;
 				multiMapAdd(ranksForEachSuit, card.getSuit(), card.getRank());

@@ -8,7 +8,7 @@ public final class ShuffledCardProvider implements CardProvider {
 
 	private List<PlayingCard> cards;
 	
-	public static CardProvider shuffledDeck(CardProvider deckToShuffle) {
+	public static CardProvider shuffledCardProvider(CardProvider deckToShuffle) {
 		return new ShuffledCardProvider(deckToShuffle);
 	}
 	

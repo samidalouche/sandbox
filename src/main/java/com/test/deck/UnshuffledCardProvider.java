@@ -9,10 +9,10 @@ public final class UnshuffledCardProvider implements CardProvider {
 	private boolean shouldIncludeJokers;
 	private List<PlayingCard> cards = new ArrayList<PlayingCard>();
 
-	public static UnshuffledCardProvider deckWithJokers() {
+	public static UnshuffledCardProvider cardsWithJokers() {
 		return new UnshuffledCardProvider(true);
 	}
-	public static UnshuffledCardProvider deckWithoutJokers() {
+	public static UnshuffledCardProvider cardsWithoutJokers() {
 		return new UnshuffledCardProvider(false);
 	}
 	
