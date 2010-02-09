@@ -29,7 +29,7 @@ public class UnshuffledDeckTest {
 	@Test
 	public void deckShouldInclude13RanksForEachSuit() {
 		Map<Suit, Set<Rank>> ranksForEachSuit = extractAllSuitsAndRanks();
-		assertEquals(numberOfSuits(), ranksForEachSuit.size());
+		assertEquals(numberOfSuits(), ranksForEachSuit.keySet().size());
 		for(Set<Rank> ranks : ranksForEachSuit.values()) {
 			assertEquals(numberOfRanksPerSuit(), ranks.size());
 		}
@@ -46,7 +46,7 @@ public class UnshuffledDeckTest {
 	private Map<Suit, Set<Rank>> extractAllSuitsAndRanks() {
 		Map<Suit, Set<Rank>> ranksForEachSuit = new HashMap<Suit, Set<Rank>>();
 		for(PlayingCard p : deckWithoutJokers().getCards()) {
-			if(p.isStandardCard()) {
+			if(p.isStandardCard()) { // FIXME: smell that something is not right...
 				StandardCard card = (StandardCard) p;
 				multiMapAdd(ranksForEachSuit, card.getSuit(), card.getRank());
 			} else {
