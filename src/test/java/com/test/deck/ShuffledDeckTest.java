@@ -1,5 +1,6 @@
 package com.test.deck;
 
+import static com.test.deck.ShuffledDeck.shuffledDeck;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
@@ -19,7 +20,7 @@ public class ShuffledDeckTest {
 
 	@Test
 	public void shouldNotAlterCards() {
-		ShuffledDeck shuffledDeck = new ShuffledDeck(originalDeck());
+		Deck shuffledDeck = shuffledDeck(originalDeck());
 		Assert.assertThat(setOf(shuffledDeck.getCards()), is(setOf(sampleCards())));
 	}
 	
