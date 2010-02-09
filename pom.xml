@@ -3,7 +3,24 @@
   <groupId>com.test</groupId>
   <artifactId>test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+   <properties>
+                <compileSource>1.5</compileSource>
+   </properties>
+  
+  <build>
+  	<plugins>
+  		 <plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>${compileSource}</source>
+				<target>${compileSource}</target>
+			</configuration>
+         </plugin>
+  		
+  	</plugins>
+  </build>
   <dependencies>
+  <!-- 
   	<dependency>
 	    <groupId>commons-lang</groupId>
 	    <artifactId>commons-lang</artifactId>
@@ -13,12 +30,12 @@
 	    <groupId>joda-time</groupId>
 	    <artifactId>joda-time</artifactId>
 	    <version>1.6</version>
-	</dependency>
+	</dependency> 
   	<dependency>
 	    <groupId>com.google.collections</groupId>
 	    <artifactId>google-collections</artifactId>
 	    <version>1.0</version>
-	</dependency>
+	</dependency>-->
 	<dependency>
 	    <groupId>junit</groupId>
 	    <artifactId>junit</artifactId>
