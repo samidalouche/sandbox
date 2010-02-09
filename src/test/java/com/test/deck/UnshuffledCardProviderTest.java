@@ -1,7 +1,7 @@
 package com.test.deck;
 
-import static com.test.deck.UnshuffledDeck.deckWithJokers;
-import static com.test.deck.UnshuffledDeck.deckWithoutJokers;
+import static com.test.deck.UnshuffledCardProvider.deckWithJokers;
+import static com.test.deck.UnshuffledCardProvider.deckWithoutJokers;
 import static junit.framework.Assert.assertEquals;
 
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import java.util.Set;
 
 import org.junit.Test;
 
-public class UnshuffledDeckTest {
+public class UnshuffledCardProviderTest {
 
 	private static final int EXPECTED_NUMBER_OF_SUITS = 4;
 	private static final int EXPECTED_NUMBER_OF_RANKS_PER_SUIT = 13;

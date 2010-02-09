@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public final class UnshuffledDeck implements Deck {
+public final class UnshuffledCardProvider implements CardProvider {
 	private static final int NUMBER_OF_JOKER_CARDS = 2;
 	private boolean shouldIncludeJokers;
 	private List<PlayingCard> cards = new ArrayList<PlayingCard>();
 
-	public static UnshuffledDeck deckWithJokers() {
-		return new UnshuffledDeck(true);
+	public static UnshuffledCardProvider deckWithJokers() {
+		return new UnshuffledCardProvider(true);
 	}
-	public static UnshuffledDeck deckWithoutJokers() {
-		return new UnshuffledDeck(false);
+	public static UnshuffledCardProvider deckWithoutJokers() {
+		return new UnshuffledCardProvider(false);
 	}
 	
-	public UnshuffledDeck() {
-		this(true);
+	public UnshuffledCardProvider() {
+		this(false);
 	}
 
-	public UnshuffledDeck(boolean shouldIncludeJokers) {
+	public UnshuffledCardProvider(boolean shouldIncludeJokers) {
 		super();
 		this.shouldIncludeJokers = shouldIncludeJokers;
 		
