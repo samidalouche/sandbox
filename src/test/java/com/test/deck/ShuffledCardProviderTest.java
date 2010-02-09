@@ -1,6 +1,6 @@
 package com.test.deck;
 
-import static com.test.deck.ShuffledCardProvider.shuffledCardProvider;
+import static com.test.deck.ShuffledCardProvider.shuffled;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
@@ -19,7 +19,7 @@ public class ShuffledCardProviderTest {
 
 	@Test
 	public void shouldNotAlterCards() {
-		CardProvider shuffledCardProvider = shuffledCardProvider(originalCardProvider());
+		CardProvider shuffledCardProvider = shuffled(originalCardProvider());
 		Assert.assertThat(setOf(shuffledCardProvider.getCards()), is(setOf(sampleCards())));
 	}
 	
@@ -33,7 +33,7 @@ public class ShuffledCardProviderTest {
 	 */
 	@Test
 	public void orderOfCardsShouldBeDifferent() {
-		CardProvider shuffledCardProvider = ShuffledCardProvider.shuffledCardProvider(originalCardProvider());
+		CardProvider shuffledCardProvider = ShuffledCardProvider.shuffled(originalCardProvider());
 		assertThat(shuffledCardProvider.getCards(), is(not(sampleCards())));
 	}
 

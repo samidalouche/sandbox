@@ -13,7 +13,6 @@ import org.mockito.Mockito;
 
 public class BlackjackDealerTest {
 
-	
 	@Test
 	public void shouldDealOpeningHandStartingEachRoundWithPlayerOne() {
 		Player player1 = Mockito.mock(Player.class);
