@@ -4,6 +4,7 @@ import static com.test.deck.UnshuffledDeck.deckWithJokers;
 import static com.test.deck.UnshuffledDeck.deckWithoutJokers;
 import static junit.framework.Assert.assertEquals;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -13,8 +14,8 @@ import org.junit.Test;
 
 public class UnshuffledDeckTest {
 
-	private static final int NUMBER_OF_SUITS = 4;
-	private static final int NUMBER_OF_RANKS_PER_SUIT = 13;
+	private static final int EXPECTED_NUMBER_OF_SUITS = 4;
+	private static final int EXPECTED_NUMBER_OF_RANKS_PER_SUIT = 13;
 
 	@Test
 	public void deckWithoutJokersShouldhave52Cards() {
@@ -27,6 +28,20 @@ public class UnshuffledDeckTest {
 	}
 	
 	@Test
+	public void deckShouldIncludeAllRanksForEachSuit() {
+		Map<Suit, Set<Rank>> ranksForEachSuit = extractAllSuitsAndRanks();
+		for(Suit s : Suit.values()) {
+			assertEquals(AllRanks(), ranksForEachSuit.get(s));	
+		}
+		
+	}
+
+	private HashSet<Rank> AllRanks() {
+		return new HashSet<Rank>(Arrays.asList(Rank.values()));
+	}
+	
+	
+	@Test
 	public void deckShouldInclude13RanksForEachSuit() {
 		Map<Suit, Set<Rank>> ranksForEachSuit = extractAllSuitsAndRanks();
 		assertEquals(numberOfSuits(), ranksForEachSuit.keySet().size());
@@ -36,11 +51,11 @@ public class UnshuffledDeckTest {
 	}
 
 	private Object numberOfRanksPerSuit() {
-		return NUMBER_OF_RANKS_PER_SUIT;
+		return EXPECTED_NUMBER_OF_RANKS_PER_SUIT;
 	}
 
 	private int numberOfSuits() {
-		return NUMBER_OF_SUITS;
+		return EXPECTED_NUMBER_OF_SUITS;
 	}
 
 	private Map<Suit, Set<Rank>> extractAllSuitsAndRanks() {
