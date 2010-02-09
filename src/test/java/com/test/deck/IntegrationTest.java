@@ -20,9 +20,14 @@ public class IntegrationTest {
 		
 		dealer.dealOpeninghand();
 		
+		eachPlayerShouldHaveExactlyTwoCards(player1, player2, dealer);
+		
+	}
+
+	private void eachPlayerShouldHaveExactlyTwoCards(
+			Player player1, Player player2, BlackjackDealer dealer) {
 		for(List<PlayingCard> cards : Arrays.asList(player1.getCards(), player2.getCards(), dealer.getCards())) {
 			assertEquals(2, cards.size());	
 		}
-		
 	}
 }

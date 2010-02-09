@@ -26,8 +26,10 @@ public class BlackjackDealerTest {
 		Mockito.verify(player1).acceptCard(new StandardCard(Rank.FOUR, Suit.CLUBS));
 		Mockito.verify(player2).acceptCard(new StandardCard(Rank.FIVE, Suit.CLUBS));
 		Assert.assertEquals(
-				Arrays.asList(new StandardCard(Rank.THREE, Suit.CLUBS), new StandardCard(Rank.SIX, Suit.CLUBS)), 
-				dealer.getCards());
+			Arrays.asList(
+				new StandardCard(Rank.THREE, Suit.CLUBS), 
+				new StandardCard(Rank.SIX, Suit.CLUBS)), 
+			dealer.getCards());
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
