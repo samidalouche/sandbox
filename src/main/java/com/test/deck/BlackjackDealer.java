@@ -6,7 +6,7 @@ import java.util.List;
 import com.test.commons.Validate;
 
 public final class BlackjackDealer implements Player {
-	private CardProvider deck;
+	private Deck deck;
 	private List<PlayingCard> cards;
 	private List<? extends Player> otherPlayers;
 	
