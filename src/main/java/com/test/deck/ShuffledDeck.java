@@ -7,6 +7,11 @@ import java.util.List;
 public final class ShuffledDeck implements Deck {
 
 	private List<PlayingCard> cards;
+	
+	public static Deck shuffledDeck(Deck deckToShuffle) {
+		return new ShuffledDeck(deckToShuffle);
+	}
+	
 	public ShuffledDeck(Deck deckToShuffle) {
 		super();
 		cards = new ArrayList<PlayingCard>(deckToShuffle.getCards());

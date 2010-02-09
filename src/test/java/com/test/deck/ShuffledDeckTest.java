@@ -33,7 +33,7 @@ public class ShuffledDeckTest {
 	 */
 	@Test
 	public void orderOfCardsShouldBeDifferent() {
-		ShuffledDeck shuffledDeck = new ShuffledDeck(originalDeck());
+		Deck shuffledDeck = ShuffledDeck.shuffledDeck(originalDeck());
 		assertThat(shuffledDeck.getCards(), is(not(sampleCards())));
 	}
 	
