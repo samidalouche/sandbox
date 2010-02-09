@@ -1,8 +1,12 @@
 package com.test.deck;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 
+import org.hamcrest.CoreMatchers;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class StandardCardTest {
@@ -25,18 +29,27 @@ public class StandardCardTest {
 	}
 	
 	@Test
-	public void cardsWithSameRankAndSuitShouldBeEqual(){
-		// TODO
+	public void cardsWithSameRankAndSuitShouldBeEqualAndHaveSameHashCode(){
+		assertThat(new StandardCard(Rank.ACE, Suit.DIAMONDS), 
+				is(new StandardCard(Rank.ACE, Suit.DIAMONDS)));
+		Assert.assertEquals(new StandardCard(Rank.ACE, Suit.DIAMONDS).hashCode(), 
+				new StandardCard(Rank.ACE, Suit.DIAMONDS).hashCode());
 	}
 	
 	@Test
 	public void cardsWithDifferentRanksShouldNotBeEqual() {
-		// TODO
+		assertThat(new StandardCard(Rank.ACE, Suit.DIAMONDS), 
+				is(not(new StandardCard(Rank.TWO, Suit.DIAMONDS))));
+		Assert.assertFalse(new StandardCard(Rank.ACE, Suit.DIAMONDS).hashCode() == 
+				new StandardCard(Rank.TWO, Suit.DIAMONDS).hashCode());
 	}
 	
 	@Test
 	public void cardsWithDifferentSuitsShouldNotBeEqual() {
-		// TODO
+		assertThat(new StandardCard(Rank.ACE, Suit.DIAMONDS), 
+				is(not(new StandardCard(Rank.ACE, Suit.CLUBS))));
+		Assert.assertFalse(new StandardCard(Rank.ACE, Suit.DIAMONDS).hashCode() == 
+				new StandardCard(Rank.ACE, Suit.CLUBS).hashCode());
 	}
 
 	private Rank anyRank() {
