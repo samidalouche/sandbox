@@ -48,8 +48,8 @@ public class MultiPowerPointTest {
 		PowerPoint appliance2 = mock(PowerPoint.class);
 		PowerPoint multiPowerPoint = new MultiPowerPoint(appliance1, appliance2);
 		multiPowerPoint.turnOn();
-		Mockito.verify(appliance1).turn(on());
-		Mockito.verify(appliance2).turn(on());
+		Mockito.verify(appliance1).turnOn();
+		Mockito.verify(appliance2).turnOn();
 	}
 	
 	@Test
@@ -57,17 +57,9 @@ public class MultiPowerPointTest {
 		PowerPoint appliance1 = mock(PowerPoint.class);
 		PowerPoint appliance2 = mock(PowerPoint.class);
 		PowerPoint multiPowerPoint = new MultiPowerPoint(appliance1, appliance2);
-		multiPowerPoint.turnOn();
-		Mockito.verify(appliance1).turn(off());
-		Mockito.verify(appliance2).turn(off());
-	}
-
-	private boolean off() {
-		return false;
-	}
-
-	private boolean on() {
-		return true;
+		multiPowerPoint.turnOff();
+		Mockito.verify(appliance1).turnOff();
+		Mockito.verify(appliance2).turnOff();
 	}
 
 	private PowerPoint applianceThatIsTurnedOn() {

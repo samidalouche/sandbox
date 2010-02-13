@@ -51,13 +51,20 @@ public final class MultiPowerPoint implements PowerPoint {
 		this.turn(on());
 	}
 
-	@Override
-	public void turn(boolean on) {
+	private void turn(boolean on) {
 		for(PowerPoint appliance: this.appliances) {
-			appliance.turn(on);
+			turn(appliance, on);
 		}
 	}
 
+	private void turn(PowerPoint appliance, boolean on) {
+		if(on) {
+			appliance.turnOn();
+		} else {
+			appliance.turnOff();
+		}
+	}
+	
 	private boolean off() {
 		return false;
 	}

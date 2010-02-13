@@ -10,11 +10,6 @@ package com.dalouche.experiments.multipowerpoint;
  */
 public interface PowerPoint {
 	/**
-	 * Turns the device on or off
-	 * @param on true if the device is to be turned on, false otherwise
-	 */
-	void turn(boolean on);
-	/**
 	 * turn on the device
 	 */
 	void turnOn();
