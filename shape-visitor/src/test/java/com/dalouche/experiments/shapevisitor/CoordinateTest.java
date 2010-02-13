@@ -1,15 +1,18 @@
 package com.dalouche.experiments.shapevisitor;
 
 import static com.dalouche.experiments.shapevisitor.Coordinate.coordinate;
+import static com.dalouche.experiments.shapevisitor.Coordinate.x;
 import static com.dalouche.experiments.shapevisitor.Coordinate.zeroZero;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.equalShouldBeReflexive;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldBeEqualAndHaveSameHashCode;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotBeEqualAndHaveDifferentHashCode;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualNull;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 
@@ -27,6 +30,11 @@ public class CoordinateTest {
 		Coordinate coordinate = coordinate().withX(5).withY(20);
 		assertThat(coordinate.getX(), is(5d));
 		assertThat(coordinate.getY(), is(20d));
+	}
+	
+	@Test
+	public void withMethodsShouldBeEquivalentToShortFactoryMethods() {
+		assertThat(x(5).y(20), is(equalTo(coordinate().withX(5).withY(20))));
 	}
 	
 	@Test

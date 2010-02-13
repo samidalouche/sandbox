@@ -27,6 +27,10 @@ public final class Coordinate {
 		return zeroZero();
 	}
 	
+	public static Coordinate x(double x) {
+		return coordinate().withX(x);
+	}
+	
 	private Coordinate(double x, double y) {
 		super();
 		this.x = x;
@@ -47,6 +51,10 @@ public final class Coordinate {
 	
 	public Coordinate withY(double y) {
 		return new Coordinate(this.x, y);
+	}
+	
+	public Coordinate y(double y) {
+		return withY(y);
 	}
 	
 	@Override
