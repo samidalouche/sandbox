@@ -5,9 +5,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
-
 public class TestUtils {
 	public static void equalShouldBeReflexive(Object o) {
 		assertThat(o, is(equalTo(o)));
