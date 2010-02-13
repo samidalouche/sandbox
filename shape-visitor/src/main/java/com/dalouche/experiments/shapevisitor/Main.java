@@ -17,8 +17,11 @@ public class Main {
 		ImmutableSet<Shape> shapes = 
 			ImmutableSet.of(
 				triangle().withBase(22.57).withHeight(56),
+				triangle().withBase(225.7).withHeight(560),
 				rectangle().withBreadth(20).withHeight(40),
-				circle().withRadius(78)
+				rectangle().withBreadth(200).withHeight(400),
+				circle().withRadius(78),
+				circle().withRadius(7.8)
 			);
 		
 		displayAreas(shapes);
