@@ -4,7 +4,7 @@ import static org.fest.reflect.core.Reflection.method;
 
 import org.apache.commons.lang.Validate;
 
-public class DefaultReflectionStrategy implements ApplianceReflectionStrategy {
+public final class DefaultReflectionStrategy implements ApplianceReflectionStrategy {
 	private String turnOnMethod = "turnOn";
 	private String turnOffMethod = "turnOff";
 	private String isTurnedOnMethod = "isTurnedOn";
