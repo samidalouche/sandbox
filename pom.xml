@@ -1,22 +1,23 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.dalouche.experiments</groupId>
-  <artifactId>experiments-parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Experiments parent</name>
-  <description>experiments parent module</description>
-  <url>http://github.com/samokk/experiments</url>
-  <packaging>pom</packaging>
-  <inceptionYear>2010</inceptionYear>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.dalouche.experiments</groupId>
+	<artifactId>experiments-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Experiments parent</name>
+	<description>experiments parent module</description>
+	<url>http://github.com/samokk/experiments</url>
+	<packaging>pom</packaging>
+	<inceptionYear>2010</inceptionYear>
 	<prerequisites>
 		<maven>2.1.0</maven>
 	</prerequisites>
-   <properties>
-                <compileSource>1.6</compileSource>
+	<properties>
+		<compileSource>1.6</compileSource>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<slf4j.version>1.5.2</slf4j.version>
-   </properties>
-   <scm>
+	</properties>
+	<scm>
 		<connection>
 			scm:git:git://github.com/samokk/experiments.git
 		</connection>
@@ -24,17 +25,17 @@
 			scm:git:git@github.com:samokk/experiments.git
 		</developerConnection>
 		<url>http://github.com/samokk/experiments</url>
-   </scm>
-  
-   <licenses>
+	</scm>
+
+	<licenses>
 		<license>
 			<name>Apache License 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
 			<distribution>repo</distribution>
 		</license>
-   </licenses>
+	</licenses>
 
-   <developers>
+	<developers>
 		<developer>
 			<id>sdalouche</id>
 			<name>Sami Dalouche</name>
@@ -44,24 +45,24 @@
 			</roles>
 			<timezone>-5</timezone>
 		</developer>
-   </developers>
+	</developers>
 
-   <modules>
+	<modules>
 		<module>shape-visitor</module>
 		<module>multi-power-point</module>
 		<module>rock-paper-scissors</module>
-   </modules>
-   <build>
+	</modules>
+	<build>
 
-  	<plugins>
-  		 <plugin>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<configuration>
-				<source>${compileSource}</source>
-				<target>${compileSource}</target>
-			</configuration>
-         </plugin>
-  		<plugin>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${compileSource}</source>
+					<target>${compileSource}</target>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
@@ -70,46 +71,46 @@
 					</excludes>
 				</configuration>
 			</plugin>
-  	</plugins>
-   </build>
-   <dependencies>
-  	<dependency>
-	    <groupId>commons-lang</groupId>
-	    <artifactId>commons-lang</artifactId>
-	    <version>2.4</version>
-	</dependency>
-  	<dependency>
-	    <groupId>joda-time</groupId>
-	    <artifactId>joda-time</artifactId>
-	    <version>1.6</version>
-	</dependency> 
-  	<dependency>
-	    <groupId>com.google.collections</groupId>
-	    <artifactId>google-collections</artifactId>
-	    <version>1.0</version>
-	</dependency>
-	<dependency>
-	    <groupId>junit</groupId>
-	    <artifactId>junit</artifactId>
-	    <version>4.7</version>
-	    <scope>test</scope>
-	</dependency>
-  	<dependency>
-	    <groupId>org.mockito</groupId>
-	    <artifactId>mockito-all</artifactId>
-	    <version>1.8.2</version>
-	    <scope>test</scope>
-	</dependency>
- 	<dependency>
-	    <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-	    <version>${slf4j.version}</version>
-	</dependency>
-	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-log4j12</artifactId>
-	    <version>${slf4j.version}</version>
-	    <scope>provided</scope>
-	</dependency>
-  </dependencies>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.collections</groupId>
+			<artifactId>google-collections</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 </project>
