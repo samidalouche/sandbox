@@ -1,4 +1,4 @@
-package com.dalouche.experiments.shapevisitor.commons;
+package com.dalouche.experiments.commons;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

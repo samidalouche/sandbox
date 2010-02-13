@@ -1,10 +1,10 @@
 package com.dalouche.experiments.shapevisitor.shapes;
 
-import static com.dalouche.experiments.shapevisitor.commons.TestUtils.equalShouldBeReflexive;
-import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldBeEqualAndHaveSameHashCode;
-import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotBeEqualAndHaveDifferentHashCode;
-import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualNull;
-import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
+import static com.dalouche.experiments.commons.TestUtils.equalShouldBeReflexive;
+import static com.dalouche.experiments.commons.TestUtils.shouldBeEqualAndHaveSameHashCode;
+import static com.dalouche.experiments.commons.TestUtils.shouldNotBeEqualAndHaveDifferentHashCode;
+import static com.dalouche.experiments.commons.TestUtils.shouldNotEqualNull;
+import static com.dalouche.experiments.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
 import static com.dalouche.experiments.shapevisitor.shapes.Circle.circle;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
