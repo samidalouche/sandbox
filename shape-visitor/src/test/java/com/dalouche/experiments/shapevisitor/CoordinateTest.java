@@ -12,7 +12,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 
@@ -46,9 +45,9 @@ public class CoordinateTest {
 	
 	@Test
 	public void equalsShouldBeSane() {
-		equalShouldBeReflexive(sampleCoordinateObject());
-		shouldNotEqualNull(sampleCoordinateObject());
-		shouldNotEqualObjectOfDifferentType(sampleCoordinateObject());
+		equalShouldBeReflexive(anyCoordinate());
+		shouldNotEqualNull(anyCoordinate());
+		shouldNotEqualObjectOfDifferentType(anyCoordinate());
 	}
 
 	@Test
@@ -78,7 +77,7 @@ public class CoordinateTest {
 		assertThat(coordinate().withX(5).withY(-20).toString(), is("(5.0,-20.0)"));
 	}
 	
-	private Coordinate sampleCoordinateObject() {
+	private Coordinate anyCoordinate() {
 		return coordinate();
 	}
 	
