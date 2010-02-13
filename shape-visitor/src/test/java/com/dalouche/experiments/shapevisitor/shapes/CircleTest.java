@@ -15,10 +15,6 @@ import junit.framework.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.dalouche.experiments.shapevisitor.shapes.Circle;
-import com.dalouche.experiments.shapevisitor.shapes.Shape;
-import com.dalouche.experiments.shapevisitor.shapes.ShapeVisitor;
-
 public class CircleTest {
 
 	@Test
@@ -61,9 +57,10 @@ public class CircleTest {
 		assertThat(myCircle().toString(), is("Circle[radius=100.0]"));
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void shouldAcceptCircleVisitorAndReturnItsResult() {
-		ShapeVisitor visitor = mock(ShapeVisitor.class);
+		ShapeVisitor<String> visitor = mock(ShapeVisitor.class);
 		when(visitor.visitCircle((Circle) Mockito.anyObject()))
 			.thenReturn("VisitorCalculation");
 		Circle shape = myCircle();
@@ -77,7 +74,7 @@ public class CircleTest {
 		return circle().withRadius(100);
 	}
 
-	private Object anyCircle() {
+	private Circle anyCircle() {
 		return circle();
 	}
 }

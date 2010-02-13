@@ -69,7 +69,7 @@ public final class Triangle implements Shape {
 			.toString();
 	}
 	@Override
-	public <T> T accept(ShapeVisitor visitor) {
+	public <T> T accept(ShapeVisitor<T> visitor) {
 		return visitor.visitTriangle(this);
 	}
 }

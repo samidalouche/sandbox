@@ -13,7 +13,7 @@ import com.dalouche.experiments.shapevisitor.shapes.ShapeVisitor;
 
 public class AreaVisitorTest {
 
-	private ShapeVisitor areaVisitor;
+	private ShapeVisitor<Double> areaVisitor;
 
 	@Before
 	public void onSetUp() {

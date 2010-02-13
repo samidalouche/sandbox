@@ -75,7 +75,7 @@ public final class Rectangle implements Shape {
 	}
 
 	@Override
-	public <T> T accept(ShapeVisitor visitor) {
+	public <T> T accept(ShapeVisitor<T> visitor) {
 		return visitor.visitRectangle(this);
 	}
 	

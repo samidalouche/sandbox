@@ -74,9 +74,10 @@ public class TriangleTest {
 		assertThat(myTriangle().toString(), is("Triangle[base=20.0,height=30.0]"));
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void shouldAcceptTriangleVisitorAndReturnItsResult() {
-		ShapeVisitor visitor = mock(ShapeVisitor.class);
+		ShapeVisitor<String> visitor = mock(ShapeVisitor.class);
 		when(visitor.visitTriangle((Triangle) Mockito.anyObject()))
 			.thenReturn("VisitorCalculation");
 		Triangle shape = myTriangle();

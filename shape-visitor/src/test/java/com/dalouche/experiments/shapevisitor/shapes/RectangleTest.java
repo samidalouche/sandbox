@@ -77,9 +77,10 @@ public class RectangleTest {
 		assertThat(myRectangle().toString(), is("Rectangle[breadth=20.0,height=30.0]"));
 	}
 
+	@SuppressWarnings("unchecked")
 	@Test
 	public void shouldAcceptRectangleVisitorAndReturnItsResult() {
-		ShapeVisitor visitor = mock(ShapeVisitor.class);
+		ShapeVisitor<String> visitor = mock(ShapeVisitor.class);
 		when(visitor.visitRectangle((Rectangle) Mockito.anyObject()))
 			.thenReturn("VisitorCalculation");
 		Rectangle shape = myRectangle();

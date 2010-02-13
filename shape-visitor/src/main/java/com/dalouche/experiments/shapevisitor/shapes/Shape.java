@@ -7,5 +7,5 @@ package com.dalouche.experiments.shapevisitor.shapes;
  *
  */
 public interface Shape {
-	<T> T accept(ShapeVisitor visitor);
+	<T> T accept(ShapeVisitor<T> visitor);
 }

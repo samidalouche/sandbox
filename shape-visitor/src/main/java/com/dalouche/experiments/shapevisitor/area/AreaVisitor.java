@@ -5,14 +5,13 @@ import com.dalouche.experiments.shapevisitor.shapes.Rectangle;
 import com.dalouche.experiments.shapevisitor.shapes.ShapeVisitor;
 import com.dalouche.experiments.shapevisitor.shapes.Triangle;
 
-public class AreaVisitor implements ShapeVisitor {
+public class AreaVisitor implements ShapeVisitor<Double> {
 
 	/**
 	 * Calculates the Area of the given circle
 	 * 
 	 * area = PI r^2
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public Double visitCircle(Circle circle) {
 		return Math.PI*(circle.getRadius()*circle.getRadius());
@@ -23,7 +22,6 @@ public class AreaVisitor implements ShapeVisitor {
 	 * 
 	 * area = h x w 
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public Double visitRectangle(Rectangle rectangle) {
 		return rectangle.getHeight()*rectangle.getBreadth();
@@ -34,7 +32,6 @@ public class AreaVisitor implements ShapeVisitor {
 	 * 
 	 * area = 1/2 x b x h
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public Double visitTriangle(Triangle triangle) {
 		return 0.5d*triangle.getBase()*triangle.getHeight();

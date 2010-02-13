@@ -60,7 +60,7 @@ public final class Circle implements Shape {
 	}
 
 	@Override
-	public <T> T accept(ShapeVisitor visitor) {
+	public <T> T accept(ShapeVisitor<T> visitor) {
 		return visitor.visitCircle(this);
 	}
 	
