@@ -23,13 +23,13 @@ public class RectangleTest {
 
 	@Test
 	public void defaultRectangleShouldHaveSaneDefaultValues() {
-		assertThat(rectangle().getWidth(), is(0d));
+		assertThat(rectangle().getBreadth(), is(0d));
 		assertThat(rectangle().getHeight(), is(0d));
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void shouldNotCreateRectangleWithNegativeWidth() {
-		rectangle().withWidth(-1);
+	public void shouldNotCreateRectangleWithNegativeBreadth() {
+		rectangle().withBreadth(-1);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
@@ -40,9 +40,9 @@ public class RectangleTest {
 	@Test
 	public void shouldCreateRectangleWithGivenProperties() {
 		Rectangle rectangle = rectangle()
-			.withWidth(20).withHeight(30);
+			.withBreadth(20).withHeight(30);
 		
-		assertThat(rectangle.getWidth(), is(20d));
+		assertThat(rectangle.getBreadth(), is(20d));
 		assertThat(rectangle.getHeight(), is(30d));
 	}
 	
@@ -54,15 +54,15 @@ public class RectangleTest {
 	}
 	
 	@Test
-	public void rectanglesWithSameWidthAndHeightShouldBeEqual() {
+	public void rectanglesWithSameBreadthAndHeightShouldBeEqual() {
 		shouldBeEqualAndHaveSameHashCode(myRectangle(), myRectangle());
 	}
 	
 	@Test
-	public void rectanglesWithDifferentWidthShouldNotBeEqual() {
+	public void rectanglesWithDifferentBreadthShouldNotBeEqual() {
 		shouldNotBeEqualAndHaveDifferentHashCode(
-			rectangle().withWidth(10), 
-			rectangle().withWidth(100));
+			rectangle().withBreadth(10), 
+			rectangle().withBreadth(100));
 	}
 	
 	@Test
@@ -74,7 +74,7 @@ public class RectangleTest {
 	
 	@Test
 	public void toStringShouldBeDescriptive() {
-		assertThat(myRectangle().toString(), is("Rectangle[width=20.0,height=30.0]"));
+		assertThat(myRectangle().toString(), is("Rectangle[breadth=20.0,height=30.0]"));
 	}
 
 	@Test
@@ -95,7 +95,7 @@ public class RectangleTest {
 	
 	private Rectangle myRectangle() {
 		return rectangle()
-			.withWidth(20).withHeight(30);
+			.withBreadth(20).withHeight(30);
 	}
 	
 }

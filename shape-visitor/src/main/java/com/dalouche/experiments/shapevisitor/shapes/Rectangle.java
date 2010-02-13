@@ -7,35 +7,35 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 public final class Rectangle implements Shape {
-	private double width;
+	private double breadth;
 	private double height;
 	
 	/**
 	 * 
-	 * @return a {@link Rectangle} whose width is 0 and height is 0
+	 * @return a {@link Rectangle} whose breadth is 0 and height is 0
 	 */
 	public static Rectangle rectangle() {
 		return new Rectangle(0, 0);
 	}
 	
-	private Rectangle(double width, double height) {
+	private Rectangle(double breadth, double height) {
 		super();
-		Validate.isTrue(width >= 0);
+		Validate.isTrue(breadth >= 0);
 		Validate.isTrue(height >= 0);
-		this.width = width;
+		this.breadth = breadth;
 		this.height = height;
 	}
 	
-	public Rectangle withWidth(double width) {
-		return new Rectangle(width, this.height);
+	public Rectangle withBreadth(double breadth) {
+		return new Rectangle(breadth, this.height);
 	}
 	
 	public Rectangle withHeight(double height) {
-		return new Rectangle(this.width, height);
+		return new Rectangle(this.breadth, height);
 	}
 	
-	public double getWidth() {
-		return width;
+	public double getBreadth() {
+		return breadth;
 	}
 
 	public double getHeight() {
@@ -45,7 +45,7 @@ public final class Rectangle implements Shape {
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder()
-			.append(width)
+			.append(breadth)
 			.append(height)
 			.toHashCode();
 	}
@@ -61,7 +61,7 @@ public final class Rectangle implements Shape {
 		Rectangle other = (Rectangle) obj;
 		
 		return new EqualsBuilder()
-			.append(width, other.width)
+			.append(breadth, other.breadth)
 			.append(height, other.height)
 			.isEquals();
 	}
@@ -69,7 +69,7 @@ public final class Rectangle implements Shape {
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-			.append("width", width)
+			.append("breadth", breadth)
 			.append("height", height)
 			.toString();
 	}
