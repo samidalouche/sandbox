@@ -5,11 +5,7 @@ import static com.dalouche.experiments.shapevisitor.shapes.Rectangle.rectangle;
 import static com.dalouche.experiments.shapevisitor.shapes.Triangle.triangle;
 
 import com.dalouche.experiments.shapevisitor.area.AreaVisitor;
-import com.dalouche.experiments.shapevisitor.shapes.Circle;
-import com.dalouche.experiments.shapevisitor.shapes.Rectangle;
 import com.dalouche.experiments.shapevisitor.shapes.Shape;
-import com.dalouche.experiments.shapevisitor.shapes.Triangle;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 public class Main {
