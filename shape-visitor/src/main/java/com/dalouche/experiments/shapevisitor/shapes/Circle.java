@@ -1,4 +1,4 @@
-package com.dalouche.experiments.shapevisitor;
+package com.dalouche.experiments.shapevisitor.shapes;
 
 import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.builder.EqualsBuilder;

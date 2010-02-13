@@ -1,4 +1,4 @@
-package com.dalouche.experiments.shapevisitor;
+package com.dalouche.experiments.shapevisitor.shapes;
 
 /**
  * A geometric shape

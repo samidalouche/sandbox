@@ -1,12 +1,12 @@
-package com.dalouche.experiments.shapevisitor;
+package com.dalouche.experiments.shapevisitor.shapes;
 
-import static com.dalouche.experiments.shapevisitor.Rectangle.rectangle;
-import static com.dalouche.experiments.shapevisitor.Triangle.triangle;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.equalShouldBeReflexive;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldBeEqualAndHaveSameHashCode;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotBeEqualAndHaveDifferentHashCode;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualNull;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
+import static com.dalouche.experiments.shapevisitor.shapes.Rectangle.rectangle;
+import static com.dalouche.experiments.shapevisitor.shapes.Triangle.triangle;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
@@ -15,6 +15,10 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 import org.mockito.Mockito;
+
+import com.dalouche.experiments.shapevisitor.shapes.Shape;
+import com.dalouche.experiments.shapevisitor.shapes.ShapeVisitor;
+import com.dalouche.experiments.shapevisitor.shapes.Triangle;
 
 public class TriangleTest {
 	@Test

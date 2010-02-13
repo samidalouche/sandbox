@@ -1,4 +1,4 @@
-package com.dalouche.experiments.shapevisitor;
+package com.dalouche.experiments.shapevisitor.shapes;
 
 public interface ShapeVisitor {
 	<T> T visitCircle(Circle circle);
