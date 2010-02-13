@@ -7,36 +7,25 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 public final class Circle implements Shape {
-	private Coordinate center;
 	private double radius;
 	
 	/**
-	 * @return a {@link Circle} with a Center of (0,0) and a radius of 0
+	 * @return a {@link Circle} with a radius of 0
 	 */
 	public static Circle circle() {
-		return new Circle(Coordinate.zeroZero(), 0d);
+		return new Circle(0d);
 	}
 	
-	private Circle(Coordinate center, double radius) {
+	private Circle(double radius) {
 		super();
-		Validate.notNull(center);
 		Validate.isTrue(radius >= 0);
-		this.center = center;
 		this.radius = radius;
 	}
 
-	public Circle withCenter(Coordinate center) {
-		return new Circle(center, this.radius);
-	}
-	
 	public Circle withRadius(double radius) {
-		return new Circle(this.center, radius);
+		return new Circle(radius);
 	}
 	
-	public Coordinate getCenter() {
-		return center;
-	}
-
 	public double getRadius() {
 		return radius;
 	}
@@ -44,7 +33,6 @@ public final class Circle implements Shape {
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder()
-			.append(center)
 			.append(radius)
 			.toHashCode();
 	}
@@ -60,7 +48,6 @@ public final class Circle implements Shape {
 		Circle other = (Circle) obj;
 		
 		return new EqualsBuilder()
-			.append(center, other.center)
 			.append(radius, other.radius)
 			.isEquals();
 	}
@@ -68,7 +55,6 @@ public final class Circle implements Shape {
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-			.append("center", center)
 			.append("radius", radius)
 			.toString();
 	}

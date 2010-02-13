@@ -1,14 +1,11 @@
 package com.dalouche.experiments.shapevisitor;
 
-import static com.dalouche.experiments.shapevisitor.Coordinate.x;
-import static com.dalouche.experiments.shapevisitor.Coordinate.zeroZero;
 import static com.dalouche.experiments.shapevisitor.Rectangle.rectangle;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.equalShouldBeReflexive;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldBeEqualAndHaveSameHashCode;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotBeEqualAndHaveDifferentHashCode;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualNull;
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -18,14 +15,8 @@ public class RectangleTest {
 
 	@Test
 	public void defaultRectangleShouldHaveSaneDefaultValues() {
-		assertThat(rectangle().getMinXminY(), is(zeroZero()));
 		assertThat(rectangle().getWidth(), is(0d));
 		assertThat(rectangle().getHeight(), is(0d));
-	}
-	
-	@Test(expected=IllegalArgumentException.class)
-	public void shouldNotCreateRectangleWithNullMinXMinY() {
-		rectangle().withMinXminY(null);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
@@ -41,10 +32,8 @@ public class RectangleTest {
 	@Test
 	public void shouldCreateRectangleWithGivenProperties() {
 		Rectangle rectangle = rectangle()
-			.withMinXminY(x(10).y(10))
 			.withWidth(20).withHeight(30);
 		
-		assertThat(rectangle.getMinXminY(), is(equalTo(x(10).y(10))));
 		assertThat(rectangle.getWidth(), is(20d));
 		assertThat(rectangle.getHeight(), is(30d));
 	}
@@ -57,16 +46,8 @@ public class RectangleTest {
 	}
 	
 	@Test
-	public void rectanglesWithSameMinXMinYAndWidthAndHeightShouldBeEqual() {
+	public void rectanglesWithSameWidthAndHeightShouldBeEqual() {
 		shouldBeEqualAndHaveSameHashCode(myRectangle(), myRectangle());
-	}
-	
-
-	@Test
-	public void rectanglesWithDifferentMinXminYShouldNotBeEqual() {
-		shouldNotBeEqualAndHaveDifferentHashCode(
-			rectangle().withMinXminY(x(10).y(20)), 
-			rectangle().withMinXminY(x(100).y(200)));
 	}
 	
 	@Test
@@ -85,7 +66,7 @@ public class RectangleTest {
 	
 	@Test
 	public void toStringShouldBeDescriptive() {
-		assertThat(myRectangle().toString(), is("Rectangle[minXminY=(10.0,10.0),width=20.0,height=30.0]"));
+		assertThat(myRectangle().toString(), is("Rectangle[width=20.0,height=30.0]"));
 	}
 
 	private Object anyRectangle() {
@@ -94,7 +75,6 @@ public class RectangleTest {
 	
 	private Object myRectangle() {
 		return rectangle()
-			.withMinXminY(x(10).y(10))
 			.withWidth(20).withHeight(30);
 	}
 	
