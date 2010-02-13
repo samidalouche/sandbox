@@ -9,25 +9,25 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  * @author sdalouche
  *
  */
-public final class TwoDimensionalCartesianCoordinate {
+public final class Coordinate {
 	private double x;
 	private double y;
 	
 	/**
-	 * @return a {@link TwoDimensionalCartesianCoordinate} at (0,0)
+	 * @return a {@link Coordinate} at (0,0)
 	 */
-	public static TwoDimensionalCartesianCoordinate zeroZero() {
-		return new TwoDimensionalCartesianCoordinate(0, 0);
+	public static Coordinate zeroZero() {
+		return new Coordinate(0, 0);
 	}
 	
 	/**
-	 * @return a {@link TwoDimensionalCartesianCoordinate} at (0,0)
+	 * @return a {@link Coordinate} at (0,0)
 	 */
-	public static TwoDimensionalCartesianCoordinate coordinate() {
+	public static Coordinate coordinate() {
 		return zeroZero();
 	}
 	
-	private TwoDimensionalCartesianCoordinate(double x, double y) {
+	private Coordinate(double x, double y) {
 		super();
 		this.x = x;
 		this.y = y;
@@ -41,12 +41,12 @@ public final class TwoDimensionalCartesianCoordinate {
 		return y;
 	}
 
-	public TwoDimensionalCartesianCoordinate withX(double x) {
-		return new TwoDimensionalCartesianCoordinate(x, this.y);
+	public Coordinate withX(double x) {
+		return new Coordinate(x, this.y);
 	}
 	
-	public TwoDimensionalCartesianCoordinate withY(double y) {
-		return new TwoDimensionalCartesianCoordinate(this.x, y);
+	public Coordinate withY(double y) {
+		return new Coordinate(this.x, y);
 	}
 	
 	@Override
@@ -65,7 +65,7 @@ public final class TwoDimensionalCartesianCoordinate {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TwoDimensionalCartesianCoordinate other = (TwoDimensionalCartesianCoordinate) obj;
+		Coordinate other = (Coordinate) obj;
 		
 		return new EqualsBuilder()
 			.append(x, other.x)
