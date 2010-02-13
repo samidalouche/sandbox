@@ -8,8 +8,12 @@ import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotE
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import junit.framework.Assert;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class CircleTest {
 
@@ -53,6 +57,18 @@ public class CircleTest {
 		assertThat(myCircle().toString(), is("Circle[radius=100.0]"));
 	}
 	
+	@Test
+	public void shouldAcceptCircleVisitorAndReturnItsResult() {
+		ShapeVisitor visitor = mock(ShapeVisitor.class);
+		when(visitor.visitCircle((Circle) Mockito.anyObject()))
+			.thenReturn("VisitorCalculation");
+		Circle shape = myCircle();
+		
+		String value = ((Shape)shape).accept(visitor);
+		Assert.assertEquals("VisitorCalculation", value);
+		Mockito.verify(visitor).visitCircle(Mockito.same(shape));
+	}
+
 	private Circle myCircle() {
 		return circle().withRadius(100);
 	}

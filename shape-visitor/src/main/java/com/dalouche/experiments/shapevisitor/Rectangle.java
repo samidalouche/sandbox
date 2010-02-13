@@ -73,6 +73,10 @@ public final class Rectangle implements Shape {
 			.append("height", height)
 			.toString();
 	}
-	
+
+	@Override
+	public <T> T accept(ShapeVisitor visitor) {
+		return visitor.visitRectangle(this);
+	}
 	
 }

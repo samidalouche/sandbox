@@ -58,7 +58,10 @@ public final class Circle implements Shape {
 			.append("radius", radius)
 			.toString();
 	}
-	
-	
+
+	@Override
+	public <T> T accept(ShapeVisitor visitor) {
+		return visitor.visitCircle(this);
+	}
 	
 }

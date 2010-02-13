@@ -68,6 +68,8 @@ public final class Triangle implements Shape {
 			.append("height", height)
 			.toString();
 	}
-	
-	
+	@Override
+	public <T> T accept(ShapeVisitor visitor) {
+		return visitor.visitTriangle(this);
+	}
 }

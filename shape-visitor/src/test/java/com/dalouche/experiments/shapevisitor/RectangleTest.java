@@ -8,8 +8,12 @@ import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotE
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import junit.framework.Assert;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class RectangleTest {
 
@@ -69,11 +73,23 @@ public class RectangleTest {
 		assertThat(myRectangle().toString(), is("Rectangle[width=20.0,height=30.0]"));
 	}
 
+	@Test
+	public void shouldAcceptRectangleVisitorAndReturnItsResult() {
+		ShapeVisitor visitor = mock(ShapeVisitor.class);
+		when(visitor.visitRectangle((Rectangle) Mockito.anyObject()))
+			.thenReturn("VisitorCalculation");
+		Rectangle shape = myRectangle();
+		
+		String value = ((Shape)shape).accept(visitor);
+		Assert.assertEquals("VisitorCalculation", value);
+		Mockito.verify(visitor).visitRectangle(Mockito.same(shape));
+	}
+	
 	private Object anyRectangle() {
 		return rectangle();
 	}
 	
-	private Object myRectangle() {
+	private Rectangle myRectangle() {
 		return rectangle()
 			.withWidth(20).withHeight(30);
 	}

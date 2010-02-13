@@ -9,8 +9,12 @@ import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotE
 import static com.dalouche.experiments.shapevisitor.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import junit.framework.Assert;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class TriangleTest {
 	@Test
@@ -71,8 +75,19 @@ public class TriangleTest {
 		assertThat(myTriangle().toString(), is("Triangle[base=20.0,height=30.0]"));
 	}
 	
+	@Test
+	public void shouldAcceptTriangleVisitorAndReturnItsResult() {
+		ShapeVisitor visitor = mock(ShapeVisitor.class);
+		when(visitor.visitTriangle((Triangle) Mockito.anyObject()))
+			.thenReturn("VisitorCalculation");
+		Triangle shape = myTriangle();
+		
+		String value = ((Shape)shape).accept(visitor);
+		Assert.assertEquals("VisitorCalculation", value);
+		Mockito.verify(visitor).visitTriangle(Mockito.same(shape));
+	}
 	
-	private Object myTriangle() {
+	private Triangle myTriangle() {
 		return triangle()
 		.withBase(20).withHeight(30);
 	}
