@@ -5,7 +5,7 @@ import org.apache.commons.lang.Validate;
 import com.dalouche.experiments.multipowerpoint.PowerPoint;
 import com.dalouche.experiments.multipowerpoint.thirdparties.Blender;
 
-public class BlenderPowerPointAdapter implements PowerPoint {
+public final class BlenderPowerPointAdapter implements PowerPoint {
 
 	private Blender blender;
 	

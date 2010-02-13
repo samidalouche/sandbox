@@ -5,7 +5,7 @@ import org.apache.commons.lang.Validate;
 import com.dalouche.experiments.multipowerpoint.PowerPoint;
 import com.dalouche.experiments.multipowerpoint.thirdparties.Oven;
 
-public class OvenPowerPointAdapter implements PowerPoint {
+public final class OvenPowerPointAdapter implements PowerPoint {
 
 	private Oven oven;
 	

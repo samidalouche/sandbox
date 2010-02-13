@@ -5,7 +5,7 @@ import org.apache.commons.lang.Validate;
 import com.dalouche.experiments.multipowerpoint.PowerPoint;
 import com.dalouche.experiments.multipowerpoint.thirdparties.Toaster;
 
-public class ToasterPowerPointAdapter implements PowerPoint {
+public final class ToasterPowerPointAdapter implements PowerPoint {
 
 	private Toaster toaster;
 	
