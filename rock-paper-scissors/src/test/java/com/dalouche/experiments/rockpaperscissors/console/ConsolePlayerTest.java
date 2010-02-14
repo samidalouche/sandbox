@@ -40,7 +40,7 @@ public class ConsolePlayerTest {
 		InputStream is = new ByteArrayInputStream(toBytes("scissors"));
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		Player player = player(is, os);
-		assertThat(player.nextSymbol(), is((Symbol)scissors()));
+		assertThat(player.nextGesture(), is((Symbol)scissors()));
 	}
 
 	private Player player(InputStream is, ByteArrayOutputStream os) {
@@ -53,7 +53,7 @@ public class ConsolePlayerTest {
 		InputStream is = new ByteArrayInputStream(toBytes("oops scissors"));
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		Player player = player(is, os);
-		assertThat(player.nextSymbol(), is((Symbol)scissors()));
+		assertThat(player.nextGesture(), is((Symbol)scissors()));
 	}
 	
 	private byte[] toBytes(String string) {

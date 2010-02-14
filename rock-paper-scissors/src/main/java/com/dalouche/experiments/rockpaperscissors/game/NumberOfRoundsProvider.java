@@ -1,7 +1,9 @@
 package com.dalouche.experiments.rockpaperscissors.game;
 
 /**
- * Provides the 
+ * Provides a {@link Game} with a mean to ask the user 
+ * how many rounds he wants to play
+ * 
  * @author sdalouche
  *
  */

@@ -2,8 +2,6 @@ package com.dalouche.experiments.rockpaperscissors.symbols;
 
 import static com.dalouche.experiments.rockpaperscissors.symbols.Scissors.scissors;
 
-
-
 public final class Rock  extends AbstractSymbol {
 
 	public static Rock rock() {

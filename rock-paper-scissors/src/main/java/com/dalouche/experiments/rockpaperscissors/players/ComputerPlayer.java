@@ -17,7 +17,7 @@ public final class ComputerPlayer implements Player {
 	private final static ImmutableList<Symbol> SYMBOLS = ImmutableList.copyOf(symbols());
 	
 	@Override
-	public Symbol nextSymbol() {
+	public Symbol nextGesture() {
 		return SYMBOLS.get(randomIndex());
 	}
 

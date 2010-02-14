@@ -7,6 +7,16 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
+/**
+ * The result of a {@link Game}
+ * 
+ * <p> FIXME: this class is still a little bit too anaemic. 
+ * It should be a little smarter and better prepare the data so that the
+ * formatting layer only handles formatting.
+ * </p>
+ * @author sdalouche
+ *
+ */
 public final class GameOutcome {
 	private ImmutableList<Round> rounds;
 

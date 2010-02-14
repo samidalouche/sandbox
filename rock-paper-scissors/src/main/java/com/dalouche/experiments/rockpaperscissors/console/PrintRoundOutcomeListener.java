@@ -9,6 +9,12 @@ import com.dalouche.experiments.rockpaperscissors.game.RoundProgressListener;
 import com.dalouche.experiments.rockpaperscissors.players.Nobody;
 import com.dalouche.experiments.rockpaperscissors.players.Player;
 
+/**
+ * Prints the outcome of the round (who wins, and why)
+ * 
+ * @author sdalouche
+ *
+ */
 public final class PrintRoundOutcomeListener implements RoundProgressListener{
 
 	private PrintStream outputStream;

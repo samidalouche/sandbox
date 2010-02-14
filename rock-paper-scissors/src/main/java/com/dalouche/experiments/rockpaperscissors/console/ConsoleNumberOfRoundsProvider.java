@@ -9,6 +9,16 @@ import org.apache.commons.lang.Validate;
 
 import com.dalouche.experiments.rockpaperscissors.game.NumberOfRoundsProvider;
 
+/**
+ * Asks the console user how many games he wants to play.
+ * 
+ * <p>
+ * Retries in case of an error
+ * </p>
+ * 
+ * @author sdalouche
+ *
+ */
 public class ConsoleNumberOfRoundsProvider implements NumberOfRoundsProvider {
 
 	private InputStream inputStream;

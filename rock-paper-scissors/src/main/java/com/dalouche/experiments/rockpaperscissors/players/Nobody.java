@@ -4,6 +4,14 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import com.dalouche.experiments.rockpaperscissors.symbols.Symbol;
 
+/**
+ * NullableObject pattern to represent a tied round.
+ * 
+ * <p> When the nobody player wins, then it means there is a tie.
+ * </p>
+ * @author sdalouche
+ *
+ */
 public final class Nobody implements Player {
 	
 	public static Nobody nobody() {
@@ -28,7 +36,7 @@ public final class Nobody implements Player {
 		
 	}
 	@Override
-	public Symbol nextSymbol() {
+	public Symbol nextGesture() {
 		throw new RuntimeException("I am not allowed to play as I am not a real player");
 	}
 	

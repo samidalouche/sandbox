@@ -3,6 +3,11 @@ package com.dalouche.experiments.rockpaperscissors.symbols;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
+/**
+ * Default implementation of {@link SymbolRepository} that provides the three gestures
+ * @author sdalouche
+ *
+ */
 public class DefaultSymbolRepository implements SymbolRepository {
 
 	private ImmutableMap<String, Symbol> symbols = symbolsByName();

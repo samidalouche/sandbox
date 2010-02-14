@@ -6,6 +6,15 @@ import org.apache.commons.lang.Validate;
 
 import com.dalouche.experiments.rockpaperscissors.players.Player;
 
+/**
+ * Represents the move of two players
+ * 
+ * <p> FIXME: there are still way too many if's, but it is not clear whether it
+ * is worth creating more abstractions to represent tied rounds.
+ * </p>
+ * @author sdalouche
+ *
+ */
 public final class Round {
 	private static final class Outcome {
 		Move winner;

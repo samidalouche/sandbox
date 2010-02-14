@@ -28,7 +28,7 @@ public class ComputerPlayerTest {
 	public void shouldEndUpPlayingAllSymbols() {
 		Set<Symbol> symbolsPlayed = Sets.newHashSet();
 		while(! Symbols.symbols().equals(symbolsPlayed)) {
-			symbolsPlayed.add(player.nextSymbol());
+			symbolsPlayed.add(player.nextGesture());
 		}
 	}
 }

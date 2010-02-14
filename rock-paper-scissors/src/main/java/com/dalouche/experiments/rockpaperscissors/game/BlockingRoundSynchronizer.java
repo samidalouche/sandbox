@@ -28,8 +28,8 @@ public final class BlockingRoundSynchronizer implements RoundSynchronizer {
 
 	@Override
 	public Round playNextRound() {
-		return new Move(player1, player1.nextSymbol())
-			.against(new Move(player2, player2.nextSymbol()));
+		return new Move(player1, player1.nextGesture())
+			.against(new Move(player2, player2.nextGesture()));
 	}
 	
 

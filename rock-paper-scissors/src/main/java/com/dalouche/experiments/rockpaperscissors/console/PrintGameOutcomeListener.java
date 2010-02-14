@@ -13,6 +13,12 @@ import com.dalouche.experiments.rockpaperscissors.players.Player;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
+/**
+ * Prints the outcome of the game (how many wins for each player)
+ * 
+ * @author sdalouche
+ *
+ */
 public final class PrintGameOutcomeListener implements GameProgressListener{
 
 	private PrintStream outputStream;

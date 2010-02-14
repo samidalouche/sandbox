@@ -43,7 +43,7 @@ public final class ConsolePlayer implements Player{
 	}
 
 	@Override
-	public Symbol nextSymbol() {
+	public Symbol nextGesture() {
 		Scanner scanner = new Scanner(inputStream);
 		Symbol symbol = null;
 		
