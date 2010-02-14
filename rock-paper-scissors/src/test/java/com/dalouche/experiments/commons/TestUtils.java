@@ -3,7 +3,10 @@ package com.dalouche.experiments.commons;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+
+import org.junit.Assert;
 
 public class TestUtils {
 	public static <T> void equalShouldBeReflexive(T o) {
@@ -11,7 +14,8 @@ public class TestUtils {
 	}
 	
 	public static <T> void shouldNotEqualNull(T o) {
-		assertThat(o, is(not(equalTo(null))));
+		assertFalse(o.equals(null));
+		//assertThat(o, is(not(equalTo(null))));
 	}
 	
 	public static <T> void shouldNotEqualObjectOfDifferentType(T o) {
