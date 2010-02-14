@@ -25,4 +25,11 @@ public final class Nobody implements Player {
 		return (getClass() == obj.getClass());
 		
 	}
+	@Override
+	public Symbol nextSymbol() {
+		throw new RuntimeException("I am not allowed to play as I am not a real player");
+	}
+	
+	
+	
 }
