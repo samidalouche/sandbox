@@ -31,8 +31,16 @@ public class ConsoleNumberOfRoundsProviderTest {
 	}
 	
 	@Test
-	public void shouldRetryWhenSymbolIsNotUnderstood() {
+	public void shouldRetryWhenNumberIsNotUnderstood() {
 		InputStream is = new ByteArrayInputStream(toBytes("oops \n 50"));
+		ByteArrayOutputStream os = new ByteArrayOutputStream();
+		NumberOfRoundsProvider numberOfRoundsProvider = numberOfRoundsProvider(is, os);
+		assertThat(numberOfRoundsProvider.getNumberOfRounds(), is(50));
+	}
+	
+	@Test
+	public void shouldRetryWhenNumberIsLessthanOne() {
+		InputStream is = new ByteArrayInputStream(toBytes("-5 \n 50"));
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		NumberOfRoundsProvider numberOfRoundsProvider = numberOfRoundsProvider(is, os);
 		assertThat(numberOfRoundsProvider.getNumberOfRounds(), is(50));

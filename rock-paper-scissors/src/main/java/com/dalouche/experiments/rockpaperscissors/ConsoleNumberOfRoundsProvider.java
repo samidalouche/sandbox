@@ -30,27 +30,35 @@ public class ConsoleNumberOfRoundsProvider implements NumberOfRoundsProvider {
 			try {
 				numberOfRounds = askNumberOfRounds(scanner);		
 			} catch(InputMismatchException e) {
-				consumeLine(scanner);
-				displayErrorMessage(e);
+				handleError(scanner);
+			} catch(IllegalArgumentException e) {
+				handleError(scanner);
 			}
 		}
 		
 		return numberOfRounds;
 	}
 
+	private void handleError(Scanner scanner) {
+		consumeLine(scanner);
+		displayErrorMessage();
+	}
+
 	private void consumeLine(Scanner scanner) {
 		scanner.nextLine();
 	}
 	
-	private void displayErrorMessage(InputMismatchException e) {
-		outputStream.println("Your number is not recognized. Please try again");
+	private void displayErrorMessage() {
+		outputStream.println("Your number is not recognized. Please retry with a number greater than 1. ");
 		outputStream.println();
 	}
 
 	
 	private int askNumberOfRounds(Scanner scanner) {
 		outputStream.print("Please enter the number of rounds you want to play: ");
-		return scanner.nextInt();
+		int i = scanner.nextInt();
+		Validate.isTrue(i >= 1);
+		return i;
 	}
 
 }
