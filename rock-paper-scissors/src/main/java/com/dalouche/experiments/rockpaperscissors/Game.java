@@ -9,22 +9,45 @@ import com.google.common.collect.Lists;
 public final class Game {
 	private RoundSynchronizer roundSynchronizer;
 	private NumberOfRoundsProvider numberOfRoundsProvider;
+	private RoundProgressListener roundProgressListener;
+	private GameProgressListener gameProgressListener;
 	
 	public Game(RoundSynchronizer roundSynchronizer, NumberOfRoundsProvider numberOfRoundsProvider) {
+		this(roundSynchronizer, numberOfRoundsProvider, null, null);
+	}
+	
+	public Game(RoundSynchronizer roundSynchronizer, NumberOfRoundsProvider numberOfRoundsProvider, 
+			RoundProgressListener roundProgressListener, GameProgressListener gameProgressListener) {
 		super();
 		Validate.notNull(roundSynchronizer);
 		Validate.notNull(numberOfRoundsProvider);
 		this.roundSynchronizer = roundSynchronizer;
 		this.numberOfRoundsProvider = numberOfRoundsProvider;
+		this.roundProgressListener = roundProgressListener;
+		this.gameProgressListener = gameProgressListener;
 	}
 
-	public GameOutcome play() {
+	public void play() {
 		int numberOfRounds = numberOfRoundsProvider.getNumberOfRounds();
 		List<Round> rounds = Lists.newArrayList();
 		for(int i = 0 ; i < numberOfRounds ; i++) {
-			rounds.add(roundSynchronizer.playNextRound());
+			Round round = roundSynchronizer.playNextRound();
+			rounds.add(round);
+			notifyRoundFinished(round);
 		}
-		return new GameOutcome(rounds);
+		notifyGameFinished(new GameOutcome(rounds));
+	}
+	
+	private void notifyRoundFinished(Round round) {
+		if(roundProgressListener != null) {
+			roundProgressListener.roundFinished(round);
+		}
+	}
+	
+	private void notifyGameFinished(GameOutcome gameOutcome) {
+		if(gameProgressListener != null) {
+			gameProgressListener.gameFinished(this, gameOutcome);
+		}
 	}
 	
 }
