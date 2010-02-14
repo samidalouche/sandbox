@@ -1,5 +1,10 @@
 package com.dalouche.experiments.rockpaperscissors.game;
 
+import static com.dalouche.experiments.commons.TestUtils.equalShouldBeReflexive;
+import static com.dalouche.experiments.commons.TestUtils.shouldBeEqualAndHaveSameHashCode;
+import static com.dalouche.experiments.commons.TestUtils.shouldNotBeEqualAndHaveDifferentHashCode;
+import static com.dalouche.experiments.commons.TestUtils.shouldNotEqualNull;
+import static com.dalouche.experiments.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
 import static com.dalouche.experiments.rockpaperscissors.symbols.Paper.paper;
 import static com.dalouche.experiments.rockpaperscissors.symbols.Rock.rock;
 import static com.dalouche.experiments.rockpaperscissors.symbols.Scissors.scissors;
@@ -34,10 +39,37 @@ public class MoveTest {
 
 	@Test
 	public void move1ShouldDefeatMove2() {
-		Move move1 = playerOnePlaysScissors();
+		Move move1 = anyMove();
 		Move move2 = player2PlaysPaper();
 		Assert.assertTrue(move1.defeats(move2));
 		Assert.assertFalse(move2.defeats(move1));
+	}
+	
+	@Test
+	public void equalsShouldBeSane() {
+		equalShouldBeReflexive(anyMove());
+		shouldNotEqualNull(anyMove());
+		shouldNotEqualObjectOfDifferentType(anyMove());
+	}
+
+	
+	@Test
+	public void movesWithSamePlayerAndSymbolShouldBeEqual() {
+		shouldBeEqualAndHaveSameHashCode(playerOnePlaysScissors(), playerOnePlaysScissors());
+	}
+	
+	@Test
+	public void movesWithDifferentPlayersShouldNotBeEqual() {
+		shouldNotBeEqualAndHaveDifferentHashCode(new Move(player1, paper()), new Move(player2, paper()));
+	}
+	
+	@Test
+	public void movesWithDifferentSymbolsShouldNotBeEqual() {
+		shouldNotBeEqualAndHaveDifferentHashCode(new Move(player1, rock()), new Move(player1, paper()));
+	}
+	
+	private Move anyMove() {
+		return playerOnePlaysScissors();
 	}
 	
 	private Move player2PlaysPaper() {

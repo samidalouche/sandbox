@@ -25,6 +25,11 @@ public final class GameOutcome {
 		this.rounds = ImmutableList.copyOf(rounds);
 	}
 	
+	/**
+	 * FIXME: instead of a Map, we should return an abstraction that allows to tell 
+	 * the number of wins per player, without any risk for null values..
+	 * @return
+	 */
 	public ImmutableMap<Player, Integer> numberOfWinsPerPlayer() {
 		Map<Player, Integer> numberOfWinsPerPlayer = Maps.newHashMap();
 		for(Round r : rounds) {

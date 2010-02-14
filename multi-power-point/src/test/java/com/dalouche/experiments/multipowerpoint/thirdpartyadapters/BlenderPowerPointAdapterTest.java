@@ -3,8 +3,6 @@ package com.dalouche.experiments.multipowerpoint.thirdpartyadapters;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.Test;
 
 import com.dalouche.experiments.multipowerpoint.thirdparties.Blender;

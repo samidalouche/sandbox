@@ -1,6 +1,8 @@
 package com.dalouche.experiments.rockpaperscissors.game;
 
 import org.apache.commons.lang.Validate;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import com.dalouche.experiments.rockpaperscissors.players.Player;
 import com.dalouche.experiments.rockpaperscissors.symbols.Symbol;
@@ -42,5 +44,31 @@ public final class Move {
 	public Symbol getSymbol() {
 		return symbol;
 	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder()
+			.append(player)
+			.append(symbol)
+			.toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Move other = (Move) obj;
+		
+		return new EqualsBuilder()
+			.append(player, other.player)
+			.append(symbol, other.symbol)
+			.isEquals();
+	}
+	
+	
 	
 }

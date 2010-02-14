@@ -74,5 +74,13 @@ public final class Round {
 			return null;	
 		}
 	}
+
+	public Move getMove1() {
+		return move1;
+	}
+
+	public Move getMove2() {
+		return move2;
+	}
 	
 }
