@@ -13,7 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public final class MoveAndGameOutcomeTest {
+public final class RoundTest {
 
 	private Player player1;
 	private Player player2;
@@ -25,26 +25,18 @@ public final class MoveAndGameOutcomeTest {
 	}
 	
 	@Test
-	public void move1ShouldDefeatMove2() {
-		Move move1 = playerOnePlaysScissors();
-		Move move2 = player2PlaysPaper();
-		Assert.assertTrue(move1.defeats(move2));
-		Assert.assertFalse(move2.defeats(move1));
-	}
-	
-	@Test
 	public void player1ShouldBeWinner() {
 		Move move1 = playerOnePlaysScissors();
 		Move move2 = player2PlaysPaper();
-		assertThat(move1.against(move2).getWinner(), is(player1));
-		assertThat(move1.against(move2).getLoser(), is(player2));
+		assertThat(move1.against(move2).getRoundWinner(), is(player1));
+		assertThat(move1.against(move2).getRoundLoser(), is(player2));
 	}
 	
 	@Test
 	public void nobodyShouldWin() {
 		Move move1 = playerOnePlaysScissors();
 		Move move2 = new Move(player2, scissors());
-		assertThat(move1.against(move2).getWinner(), is((Player)nobody()));
+		assertThat(move1.against(move2).getRoundWinner(), is((Player)nobody()));
 	}
 	
 	private Move player2PlaysPaper() {

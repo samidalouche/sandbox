@@ -4,11 +4,11 @@ import static com.dalouche.experiments.rockpaperscissors.Nobody.nobody;
 
 import org.apache.commons.lang.Validate;
 
-public class GameOutcome {
-	private static final class WinnerLooser {
+public class Round {
+	private static final class Outcome {
 		Move winner;
 		Move loser;
-		WinnerLooser(Move winner, Move loser) {
+		Outcome(Move winner, Move loser) {
 			super();
 			this.winner = winner;
 			this.loser = loser;
@@ -17,7 +17,7 @@ public class GameOutcome {
 	private Move move1;
 	private Move move2;
 	
-	public GameOutcome(Move move1, Move move2) {
+	public Round(Move move1, Move move2) {
 		super();
 		Validate.notNull(move1);
 		Validate.notNull(move2);
@@ -29,12 +29,12 @@ public class GameOutcome {
 	 * 
 	 * @return nobody if it is a tie
 	 */
-	public Player getWinner() {
+	public Player getRoundWinner() {
 		Move winnerMove = getWinnerMove();
 		return winnerMove != null ? winnerMove.getPlayer() : nobody();
 	}
 	
-	public Player getLoser() {
+	public Player getRoundLoser() {
 		Move loserMove = getLoserMove();
 		return loserMove != null ? loserMove.getPlayer() : nobody();
 	}
@@ -44,21 +44,21 @@ public class GameOutcome {
 	 * @return null if it is a tie
 	 */
 	private Move getWinnerMove() {
-		WinnerLooser outcome = getGameOutcome();
+		Outcome outcome = getGameOutcome();
 		return outcome != null ? outcome.winner : null;
 	}
 	
 	private Move getLoserMove() {
-		WinnerLooser outcome = getGameOutcome();
+		Outcome outcome = getGameOutcome();
 		return outcome != null ? outcome.loser : null;
 	}
 	
 	
-	private WinnerLooser getGameOutcome() {
+	private Outcome getGameOutcome() {
 		if(move1.defeats(move2)) {
-			return new WinnerLooser(move1, move2);
+			return new Outcome(move1, move2);
 		} else if(move2.defeats(move1)) {
-			return new WinnerLooser(move2, move1);
+			return new Outcome(move2, move1);
 		} else {
 			return null;	
 		}

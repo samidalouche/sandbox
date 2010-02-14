@@ -14,8 +14,8 @@ public final class Move {
 		this.symbol = symbol;
 	}
 
-	public GameOutcome against(Move move) {
-		return new GameOutcome(this, move);
+	public Round against(Move move) {
+		return new Round(this, move);
 	}
 	
 	public boolean defeats(Move other) {
