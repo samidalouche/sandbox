@@ -44,17 +44,17 @@ public class Round {
 	 * @return null if it is a tie
 	 */
 	private Move getWinnerMove() {
-		Outcome outcome = getGameOutcome();
+		Outcome outcome = getRoundOutcome();
 		return outcome != null ? outcome.winner : null;
 	}
 	
 	private Move getLoserMove() {
-		Outcome outcome = getGameOutcome();
+		Outcome outcome = getRoundOutcome();
 		return outcome != null ? outcome.loser : null;
 	}
 	
 	
-	private Outcome getGameOutcome() {
+	private Outcome getRoundOutcome() {
 		if(move1.defeats(move2)) {
 			return new Outcome(move1, move2);
 		} else if(move2.defeats(move1)) {
