@@ -25,4 +25,8 @@ public abstract class AbstractSymbol implements Symbol {
 		
 	}
 
+	@Override
+	public String toString() {
+		return name();
+	}
 }

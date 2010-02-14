@@ -3,6 +3,7 @@ package com.dalouche.experiments.rockpaperscissors;
 import static com.dalouche.experiments.rockpaperscissors.Paper.paper;
 import static com.dalouche.experiments.rockpaperscissors.Rock.rock;
 import static com.dalouche.experiments.rockpaperscissors.Scissors.scissors;
+import static com.dalouche.experiments.rockpaperscissors.Symbols.symbols;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -34,5 +35,10 @@ public class DefaultSymbolRepositoryTest {
 		} catch(SymbolNotFoundException e) {
 			assertThat(e.getName(), is("anything"));
 		}
+	}
+	
+	@Test
+	public void shouldFindAllSymbols() {
+		assertThat(symbolRepository.findAllSymbols(), is(symbols()));
 	}
 }

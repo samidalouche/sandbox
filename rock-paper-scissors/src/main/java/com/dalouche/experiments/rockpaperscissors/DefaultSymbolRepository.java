@@ -1,6 +1,7 @@
 package com.dalouche.experiments.rockpaperscissors;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 
 public class DefaultSymbolRepository implements SymbolRepository {
 
@@ -21,6 +22,11 @@ public class DefaultSymbolRepository implements SymbolRepository {
 			builder.put(s.name(), s);
 		}
 		return builder.build();
+	}
+
+	@Override
+	public ImmutableSet<Symbol> findAllSymbols() {
+		return Symbols.symbols();
 	}
 
 }
