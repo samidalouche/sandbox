@@ -9,13 +9,13 @@ import org.apache.commons.lang.Validate;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
-public final class PrintGameOutcome implements GameProgressListener{
+public final class PrintGameOutcomeListener implements GameProgressListener{
 
 	private PrintStream outputStream;
 	private Player playerInterestedByTheResults;
 	private Player otherPlayer;
 
-	public PrintGameOutcome(PrintStream outputStream, Player playerInterestedByTheResults, Player otherPlayer) {
+	public PrintGameOutcomeListener(PrintStream outputStream, Player playerInterestedByTheResults, Player otherPlayer) {
 		super();
 		Validate.notNull(outputStream);
 		Validate.notNull(playerInterestedByTheResults);
@@ -23,24 +23,6 @@ public final class PrintGameOutcome implements GameProgressListener{
 		this.outputStream = outputStream;
 		this.playerInterestedByTheResults = playerInterestedByTheResults;
 		this.otherPlayer = otherPlayer;
-	}
-
-	public void roundFinished(Round round) {
-		if(Nobody.nobody().equals(round.getRoundWinner())) {
-			outputStream.println("The round is tied. Nobody wins.");
-		} else if(playerInterestedByTheResults.equals(round.getRoundWinner())) {
-			outputStream.println(String.format("You win. %s", additionalSymbolInformation(round)));
-		} else {
-			outputStream.println(String.format("You lose. %s", additionalSymbolInformation(round)));
-		}
-		outputStream.println();
-	}
-
-	private String additionalSymbolInformation(Round round) {
-		return String.format("%s %s %s", // rock blunts scissors 
-			round.getWinnerMove().getSymbol().name(),
-			round.getWinnerMove().getSymbol().actionName(),
-			round.getLoserMove().getSymbol().name());
 	}
 
 	@Override

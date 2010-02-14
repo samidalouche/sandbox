@@ -11,16 +11,14 @@ public final class Game {
 	private NumberOfRoundsProvider numberOfRoundsProvider;
 	private RoundProgressListener roundProgressListener;
 	private GameProgressListener gameProgressListener;
-	
-	public Game(RoundSynchronizer roundSynchronizer, NumberOfRoundsProvider numberOfRoundsProvider) {
-		this(roundSynchronizer, numberOfRoundsProvider, null, null);
-	}
-	
+
 	public Game(RoundSynchronizer roundSynchronizer, NumberOfRoundsProvider numberOfRoundsProvider, 
 			RoundProgressListener roundProgressListener, GameProgressListener gameProgressListener) {
 		super();
 		Validate.notNull(roundSynchronizer);
 		Validate.notNull(numberOfRoundsProvider);
+		Validate.notNull(roundProgressListener);
+		Validate.notNull(gameProgressListener);
 		this.roundSynchronizer = roundSynchronizer;
 		this.numberOfRoundsProvider = numberOfRoundsProvider;
 		this.roundProgressListener = roundProgressListener;
@@ -39,15 +37,11 @@ public final class Game {
 	}
 	
 	private void notifyRoundFinished(Round round) {
-		if(roundProgressListener != null) {
-			roundProgressListener.roundFinished(round);
-		}
+		roundProgressListener.roundFinished(round);
 	}
 	
 	private void notifyGameFinished(GameOutcome gameOutcome) {
-		if(gameProgressListener != null) {
-			gameProgressListener.gameFinished(this, gameOutcome);
-		}
+		gameProgressListener.gameFinished(this, gameOutcome);
 	}
 	
 }

@@ -18,11 +18,11 @@ public class Games {
 		NumberOfRoundsProvider numberOfRoundsProvider = 
 			new ConsoleNumberOfRoundsProvider(System.in, System.out);
 		
-		PrintRoundOutcome roundProgressListener = 
-			new PrintRoundOutcome(System.out, consolePlayer);
-		PrintGameOutcome printGameOutcome = 
-			new PrintGameOutcome(System.out, consolePlayer, computerPlayer);
+		PrintRoundOutcomeListener roundProgressListener = 
+			new PrintRoundOutcomeListener(System.out, consolePlayer);
+		PrintGameOutcomeListener printGameOutcomeListener = 
+			new PrintGameOutcomeListener(System.out, consolePlayer, computerPlayer);
 		
-		return new Game(roundSynchronizer, numberOfRoundsProvider, roundProgressListener, printGameOutcome);
+		return new Game(roundSynchronizer, numberOfRoundsProvider, roundProgressListener, printGameOutcomeListener);
 	}
 }

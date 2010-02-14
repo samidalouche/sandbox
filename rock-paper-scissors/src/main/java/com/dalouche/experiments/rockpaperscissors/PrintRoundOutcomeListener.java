@@ -4,12 +4,12 @@ import java.io.PrintStream;
 
 import org.apache.commons.lang.Validate;
 
-public final class PrintRoundOutcome implements RoundProgressListener{
+public final class PrintRoundOutcomeListener implements RoundProgressListener{
 
 	private PrintStream outputStream;
 	private Player playerInterestedByTheResults;
 
-	public PrintRoundOutcome(PrintStream outputStream, Player playerInterestedByTheResults) {
+	public PrintRoundOutcomeListener(PrintStream outputStream, Player playerInterestedByTheResults) {
 		super();
 		Validate.notNull(outputStream);
 		Validate.notNull(playerInterestedByTheResults);
