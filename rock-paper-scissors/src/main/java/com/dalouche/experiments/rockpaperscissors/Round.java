@@ -43,12 +43,12 @@ public final class Round {
 	 * 
 	 * @return null if it is a tie
 	 */
-	private Move getWinnerMove() {
+	public Move getWinnerMove() {
 		Outcome outcome = getRoundOutcome();
 		return outcome != null ? outcome.winner : null;
 	}
 	
-	private Move getLoserMove() {
+	public Move getLoserMove() {
 		Outcome outcome = getRoundOutcome();
 		return outcome != null ? outcome.loser : null;
 	}

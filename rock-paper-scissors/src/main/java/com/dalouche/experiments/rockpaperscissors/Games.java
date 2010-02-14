@@ -18,6 +18,11 @@ public class Games {
 		NumberOfRoundsProvider numberOfRoundsProvider = 
 			new ConsoleNumberOfRoundsProvider(System.in, System.out);
 		
-		return new Game(roundSynchronizer, numberOfRoundsProvider, null, null);
+		PrintRoundOutcome roundProgressListener = 
+			new PrintRoundOutcome(System.out, consolePlayer);
+		PrintGameOutcome printGameOutcome = 
+			new PrintGameOutcome(System.out, consolePlayer, computerPlayer);
+		
+		return new Game(roundSynchronizer, numberOfRoundsProvider, roundProgressListener, printGameOutcome);
 	}
 }
