@@ -19,9 +19,10 @@ public final class Game {
 	}
 
 	public GameOutcome play() {
+		int numberOfRounds = numberOfRoundsProvider.getNumberOfRounds();
 		List<Round> rounds = Lists.newArrayList();
-		for(int i = 0 ; i < numberOfRoundsProvider.getNumberOfRounds() ; i++) {
-			rounds.add(roundSynchronizer.nextRound());
+		for(int i = 0 ; i < numberOfRounds ; i++) {
+			rounds.add(roundSynchronizer.playNextRound());
 		}
 		return new GameOutcome(rounds);
 	}

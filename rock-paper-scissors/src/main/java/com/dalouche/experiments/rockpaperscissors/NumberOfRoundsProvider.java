@@ -1,5 +1,10 @@
 package com.dalouche.experiments.rockpaperscissors;
 
+/**
+ * Provides the 
+ * @author sdalouche
+ *
+ */
 public interface NumberOfRoundsProvider {
 	/**
 	 * 

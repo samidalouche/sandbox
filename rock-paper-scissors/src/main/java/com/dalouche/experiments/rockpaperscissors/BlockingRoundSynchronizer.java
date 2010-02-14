@@ -25,7 +25,7 @@ public final class BlockingRoundSynchronizer implements RoundSynchronizer {
 	}
 
 	@Override
-	public Round nextRound() {
+	public Round playNextRound() {
 		return new Move(player1, player1.nextSymbol())
 			.against(new Move(player2, player2.nextSymbol()));
 	}
