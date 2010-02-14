@@ -1,9 +1,13 @@
-package com.dalouche.experiments.rockpaperscissors.game;
+package com.dalouche.experiments.rockpaperscissors;
 
 import com.dalouche.experiments.rockpaperscissors.console.ConsoleNumberOfRoundsProvider;
 import com.dalouche.experiments.rockpaperscissors.console.ConsolePlayer;
 import com.dalouche.experiments.rockpaperscissors.console.PrintGameOutcomeListener;
 import com.dalouche.experiments.rockpaperscissors.console.PrintRoundOutcomeListener;
+import com.dalouche.experiments.rockpaperscissors.game.BlockingRoundSynchronizer;
+import com.dalouche.experiments.rockpaperscissors.game.Game;
+import com.dalouche.experiments.rockpaperscissors.game.NumberOfRoundsProvider;
+import com.dalouche.experiments.rockpaperscissors.game.RoundSynchronizer;
 import com.dalouche.experiments.rockpaperscissors.players.ComputerPlayer;
 import com.dalouche.experiments.rockpaperscissors.players.Player;
 
