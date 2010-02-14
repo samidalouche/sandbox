@@ -9,7 +9,9 @@ public class Main {
 		// TODO Auto-generated method stub
 		Player player = new ConsolePlayer(System.in, System.out);
 		
-		player.nextSymbol();
+		//player.nextSymbol();
+		ConsoleNumberOfRoundsProvider provider = new ConsoleNumberOfRoundsProvider(System.in, System.out);
+		System.out.println(provider.getNumberOfRounds());
 	}
 
 }
