@@ -13,6 +13,24 @@ import org.junit.Test;
 
 public class ConsolePlayerTest {
 
+	@Test(expected=IllegalArgumentException.class)
+	public void shouldNotCreateConsolePlayerWithoutInputStream() {
+		new ConsolePlayer(null, anyPrintStream());
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void shouldNotCreateConsolePlayerWithoutOutputStream() {
+		new ConsolePlayer(anyInputStream(), null);
+	}
+	
+	private InputStream anyInputStream() {
+		return System.in;
+	}
+
+	private PrintStream anyPrintStream() {
+		return System.out;
+	}
+
 	@Test
 	public void shouldAskForNextSymbolAndInterpretResponse() {
 		InputStream is = new ByteArrayInputStream(toBytes("scissors"));
