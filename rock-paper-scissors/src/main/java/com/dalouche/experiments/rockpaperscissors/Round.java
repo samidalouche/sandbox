@@ -4,7 +4,7 @@ import static com.dalouche.experiments.rockpaperscissors.Nobody.nobody;
 
 import org.apache.commons.lang.Validate;
 
-public class Round {
+public final class Round {
 	private static final class Outcome {
 		Move winner;
 		Move loser;

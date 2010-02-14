@@ -5,10 +5,7 @@ import static com.dalouche.experiments.commons.TestUtils.shouldBeEqualAndHaveSam
 import static com.dalouche.experiments.commons.TestUtils.shouldNotEqualNull;
 import static com.dalouche.experiments.commons.TestUtils.shouldNotEqualObjectOfDifferentType;
 import static com.dalouche.experiments.rockpaperscissors.Nobody.nobody;
-import static com.dalouche.experiments.rockpaperscissors.Paper.paper;
-import static com.dalouche.experiments.rockpaperscissors.Rock.rock;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class NobodyTest {
