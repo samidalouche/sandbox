@@ -23,7 +23,6 @@ import com.google.common.collect.Iterables;
  */
 public final class ConsolePlayer implements Player{
 
-	private static final String SYMBOL_PATTERN = "[A-Za-z]+";
 	private SymbolRepository symbolRepository;
 	private InputStream inputStream;
 	private PrintStream outputStream;
@@ -68,7 +67,7 @@ public final class ConsolePlayer implements Player{
 
 	private Symbol askNextMoveToUser(Scanner scanner) {
 		outputStream.print(String.format("Please enter your next move %s: ", symbolNames()));
-		String symbolName = scanner.next(SYMBOL_PATTERN);
+		String symbolName = scanner.nextLine();
 		return this.symbolRepository.findSymbolByName(symbolName);
 	}
 

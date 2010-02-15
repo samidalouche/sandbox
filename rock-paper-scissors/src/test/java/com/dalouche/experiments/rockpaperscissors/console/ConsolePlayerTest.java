@@ -50,7 +50,15 @@ public class ConsolePlayerTest {
 	
 	@Test
 	public void shouldRetryWhenSymbolIsNotUnderstood() {
-		InputStream is = new ByteArrayInputStream(toBytes("oops scissors"));
+		InputStream is = new ByteArrayInputStream(toBytes("oops\nscissors"));
+		ByteArrayOutputStream os = new ByteArrayOutputStream();
+		Player player = player(is, os);
+		assertThat(player.nextGesture(), is((Symbol)scissors()));
+	}
+	
+	@Test
+	public void shouldNotCrashWhenNumbersAreUsed() {
+		InputStream is = new ByteArrayInputStream(toBytes("somthingContainingNumber7834874\nscissors"));
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		Player player = player(is, os);
 		assertThat(player.nextGesture(), is((Symbol)scissors()));
