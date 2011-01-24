@@ -1,0 +1,68 @@
+/* $Id: print.css,v 1.1.2.1 2008/04/18 18:43:17 mercmobily Exp $ */
+
+/* white background, black text, arial font, decent font size */
+body, node.content {
+  background-color: #fff;
+  color: #000;
+  font-family: Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+  font-size: 12pt;
+  width: 100%;
+}
+
+#page {
+  margin: 0;
+  width: 90%;
+}
+
+#squeeze {
+  margin: 0;
+  width: 100%;
+}
+
+/* underline all links */
+a:link, a:visited {
+  color: #520;
+  background: transparent;
+  text-decoration: underline !important;
+}
+
+/* don't underline header */
+#header a:link, #header a:visited {
+  text-decoration: none !important;
+}
+
+/* CSS2 selector to add visible href after links */
+#main a:link:after, #main a:visited:after,
+.content a:link:after, .content a:visited:after {
+  content: " (" attr(href) ") ";
+  font-size: 80%;
+  font-weight: normal;
+}
+
+/* don't float floating things */
+#main, #container .sidebar {
+  float: none;
+  width: 100%;
+}
+
+.submitted {
+  color: #000;
+  font-family: "Times New Roman", "Bitstream Vera Serif", Garamond, serif;
+  font-size: 10pt;
+}
+
+html body {
+  background: transparent;
+  width: auto;
+}
+
+/* Hide sidebars and nav elements */
+#skip-nav, #primary, #secondary, #sidebar-left, #sidebar-right, #search, #tabs, #menu, #mission, #footer-wrapper,
+.book-navigation, .tabs, .links, .breadcrumb, .taxonomy, .pager, .feed-icon, .forum-topic-navigation {
+  visibility: hidden;
+  display: none;
+}
+
+#logo-title {
+  margin: 20pt 20pt 0 20pt;
+}

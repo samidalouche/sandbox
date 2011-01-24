@@ -1,0 +1,97 @@
+/* -- Base node ----------------------------------------------------------- */
+.node {
+  clear: both;
+  padding: 15px 0;
+  margin: 0.5em 0 0.3em 0;
+}
+.node h2.title { margin: 0; }
+
+/* Content */
+.node .content { margin: 1.5em 0; }
+
+/* Story data */
+.node .storydata {
+  font-size: 8pt;
+  color: #888;
+}
+#content_center .node .storydata a { color: #666; }
+
+/* Links */
+.node div.links {
+  clear: left;
+  font-size: 8pt;
+}
+.node div.links a { color: #1b81ca; }
+.node div.links .links li { padding: 0 10px 0 0; }
+.node div.links .links li.statistics_counter { color: #666; }
+
+
+/* -- Drigg node ---------------------------------------------------------- */
+
+/* Karma box, offset box and story */
+.node.ntype-drigg .karma_3_big,
+.node.ntype-drigg .karma_4_big { float: left; }
+.node.ntype-drigg .offset { margin-left: 60px; }
+.node.ntype-drigg h2 { margin: 0; }
+.node.ntype-drigg a { color: #005a8e; }
+.node.ntype-drigg a:visited { color: #7facc6; }
+.node.ntype-drigg .story * { display: inline; }
+.node.ntype-drigg .story small a { color: #666; }
+.node.ntype-drigg .story p { margin: 0; display: block; margin-bottom: 1em; }
+
+/* Embedded content */
+.node.ntype-drigg .embedded-teaser div {
+  float: right;
+  margin: 0 20px;
+  padding: 1px;
+  border: 1px solid #bbb;
+}
+.node.ntype-drigg .embedded-teaser div img {
+  display: block;
+  margin: 0;
+}
+.node.ntype-drigg .embedded {
+  margin-top: 1.5em;
+}
+
+/* Story data */
+.node.ntype-drigg .storydata {
+  margin: 1.5em 0 0 40px;
+  position: relative;
+}
+.node.ntype-drigg .storydata div.picture {
+  position: absolute;
+  left: -40px;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  margin-top: 1px;
+  padding: 1px;
+  border: 1px solid #ccc;
+}
+.node.ntype-drigg .storydata div.picture a,
+.node.ntype-drigg .storydata div.picture img {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: #f3f9fc;
+}
+.node.ntype-drigg .storydata div.picture:hover { border-color: #999; }
+.node.ntype-drigg .storydata strong {
+  color: #900;
+  font-weight: normal;
+}
+.node.ntype-drigg .storydata .links li { padding: 0 2px; }
+
+/* Related links */
+.node-related { margin-left: 60px; }
+.node-related h2 { font-size: 12pt; }
+.node-related dl dt { margin: 0.2em 0 0 0; }
+.node-related dl dt span { color: #666; }
+
+
+/* -- Forum node ---------------------------------------------------------- */
+
+/* Title */
+.node.ntype-forum h2.title a { color: #005a8e; }
+.node.ntype-forum h2.title a:visited { color: #7facc6; }

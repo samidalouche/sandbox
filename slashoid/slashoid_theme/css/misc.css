@@ -1,0 +1,166 @@
+/* Comments */
+#comments { clear: both; }
+.comment {
+  margin-top: 10px;
+  padding: 10px;
+}
+.comment h3 {
+  margin: 0.5em 0;
+  font-size: 11pt;
+}
+.comment h3 a { color: #005a8e; }
+.comment div.picture {
+  float: left;
+  margin-right: 2px;
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  padding: 1px;
+  border: 1px solid #ccc;
+}
+.comment div.picture a,
+.comment div.picture img {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: #f3f9fc;
+}
+.comment div.picture:hover { border-color: #999; }
+.comment h4 {
+  margin: 0;
+  font-size: 9pt;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+.comment h4, .comment h4 a { color: #999; }
+.comment h4 small {
+  font-weight: normal;
+  font-size: 8pt;
+  color: #999;
+}
+.comment .content { clear: both; margin: 0.5em 0 0.2em 0; }
+.comment .links {
+  font-size: 8pt;
+  color: #666;
+}
+.comment.even { background-color: #f3f9fc; }
+
+/* Who voted */
+ul.drigg-voters {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+ul.drigg-voters:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}
+ul.drigg-voters {
+  #display: inline-block;
+  _height: 1px;
+}
+/* Hide from IE Mac \*/
+ul.drigg-voters { display: block; }
+/* End hide from IE Mac */
+
+ul.drigg-voters li {
+  float: left;
+  width: 31%;
+  margin: 0 2% 5px 0;
+  height: 32px;
+}
+ul.drigg-voters li div.picture {
+  float: left;
+  padding: 1px;
+  border: 1px solid #ccc;
+  margin-right: 3px;
+}
+ul.drigg-voters li div.picture a,
+ul.drigg-voters li div.picture img {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: #f3f9fc;
+}
+ul.drigg-voters li div.picture:hover { border-color: #999; }
+ul.drigg-voters li span { display: block; }
+
+
+/* Related links */
+dl.drigg-relatedlinks dt a {
+  color: #005a8e;
+  font-weight: bold;
+}
+dl.drigg-relatedlinks dt span {
+  color: #666;
+  font-size: 8pt;
+}
+dl.drigg-relatedlinks dd { margin: 0; }
+
+
+/* Account pages */
+#content_center table.drigg-user-commented td.story a,
+#content_center table.drigg-user-scoops td.story a,
+#content_center table.drigg-user-votes td.story a {
+  font-size: 12pt;
+  line-height: 1.3em;
+  color: #005a8e;
+  font-weight: bold;
+  display: block;
+}
+#content_center table.drigg-user-commented td.story a:visited,
+#content_center table.drigg-user-scoops td.story a:visited,
+#content_center table.drigg-user-votes td.story a:visited {
+  color: #7facc6;
+}
+#content_center table.drigg-user-commented td.story span,
+#content_center table.drigg-user-scoops td.story span,
+#content_center table.drigg-user-votes td.story span {
+  font-size: 8pt;
+  color: #666;
+}
+#content_center table.drigg-user-commented td.story span,
+#content_center table.drigg-user-scoops td.story span.status,
+#content_center table.drigg-user-votes td.story span.promotion {
+  color: #900;
+}
+
+/* Top users by Karma */
+#content_center table.drigg-users-by-karma div.picture {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  margin-top: 1px;
+  padding: 1px;
+  border: 1px solid #ccc;
+}
+#content_center table.drigg-users-by-karma div.picture a,
+#content_center table.drigg-users-by-karma div.picture a img {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: #f3f9fc;
+}
+#content_center table.drigg-users-by-karma div.picture:hover { border-color: #999; }
+
+
+/* Search results */
+#content_center dl.search-results dt a {
+  margin: 0;
+  font-size: 12pt;
+  line-height: 1.3em;
+  color: #005a8e;
+  font-weight: bold;
+}
+#content_center dl.search-results dt a:visited { color: #7facc6; }
+#content_center dl.search-results dd { margin: 0 0 1.5em 2em; }
+#content_center dl.search-results dd p { margin: 0; }
+#content_center dl.search-results dd p.search-info {
+  font-size: 8pt;
+  margin-top: 0.5em;
+  color: #999;
+}
+#content_center dl.search-results dd p.search-info a { color: #666; }

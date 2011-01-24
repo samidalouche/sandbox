@@ -1,0 +1,7 @@
+This is the code for http://www.slashoid.org, a community-driven news website on Android. [http://www.android.com/]
+
+What we have right now :
+ * slashoid_theme : a theme for drupal/drigg (http://www.drigg-code.org/)
+ * BlogAPI activated
+ * http://drupal.org/project/pathauto
+ * http://drupal.org/project/token
