@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lifepulz</string>
+    <!--  Dashboard Activity -->
+    <string name="dashboard_menu_presence">Presence</string>
+    <string name="dashboard_menu_selectors">Selectors</string>
+    <string name="dashboard_menu_profile">Profile</string>
+    <string name="dashboard_menu_settings">Settings</string>
+    
+    <!--  Login Activity  -->
+    <string name="login_activity_name">Life Pulz Login</string>
+    <string name="login_login">Login</string>
+    <string name="login_password">Password</string>
+    <string name="login_ok_button">OK</string>
+    
+    <string name="presence_activity_name">Life Pulz Presence</string>
+    <string name="presence_status">Status</string>
+    <string name="presence_tagline">Tagline</string>
+    <string name="presence_language">Language</string>
+    <string name="presence_duration">Duration</string>
+    <string name="presence_timeframe">Timeframe</string>
+    <string name="presence_security">Security</string>
+    <string name="presence_interest">Interest</string>
+    <string name="presence_ok">OK</string>
+
+    <string name="interest_activity_name">Pick an Interest</string>
+    <string name="interest_subject">Subject</string>
+    <string name="interest_action">Action</string>
+    <string name="interest_mood">Mood</string>
+    <string name="interest_ok">OK</string>
+    
+    <string name="profile_activity_name">Life Pulz Profile</string>
+    <string name="profile_birthdate">Birth Date</string>
+    <string name="profile_sex">Sex</string>
+    <string name="profile_sex_orientation">Sex Orientation</string>
+    <string name="profile_ok">OK</string>
+    
+    <string name="selectors_activity_name">Life Pulz Selectors</string>
+    
+    <string name="settings_activity_name">Life Pulz Settings</string>
+</resources>

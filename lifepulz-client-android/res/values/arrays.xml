@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="presence_status_options">
+        <item>Pulzy</item>
+        <item>Curious</item>
+        <item>Busy</item>
+        <item>Offline</item>
+    </string-array>
+    <string-array name="presence_status_values">
+        <item>MOOD_PULZY</item>
+        <item>MOOD_CURIOUS</item>
+        <item>MOOD_BUSY</item>
+        <item>MOOD_OFFLINE</item>
+    </string-array>
+    <string-array name="presence_language_options">
+        <item>English</item>
+        <item>French</item>
+    </string-array>
+    <string-array name="presence_language_values">
+        <item>en</item>
+        <item>fr</item>
+    </string-array>
+    <string-array name="presence_duration_options">
+        <item>1 hour</item>
+        <item>2 hour</item>
+        <item>4 hours</item>
+        <item>full day</item>
+    </string-array>
+    <integer-array name="presence_duration_values">
+        <item>60</item>
+        <item>240</item>
+        <item>720</item>
+    </integer-array>
+    <string-array name="presence_timeframe_options">
+        <item>Now</item>
+        <item>In an hour</item>
+        <item>In 2 hours</item>
+        <item>In 4 hours</item>
+    </string-array>
+    <integer-array name="presence_timeframe_values">
+        <item>0</item>
+        <item>60</item>
+        <item>120</item>
+        <item>240</item>
+    </integer-array>
+    <string-array name="presence_security_options">
+        <item>Minimal (more matches)</item>
+        <item>SecurePulz</item>
+    </string-array>
+    <string-array name="presence_security_values">
+        <item>none</item>
+        <item>secure</item>
+    </string-array>
+    <string-array name="profile_sex_options">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="profile_sex_values">
+        <item>MALE</item>
+        <item>FEMALE</item>
+    </string-array>
+        <string-array name="profile_sex_orientation_options">
+        <item>Straight</item>
+        <item>Gay</item>
+        <item>Bisexual</item>
+    </string-array>
+    <string-array name="profile_sex_orientation_values">
+        <item>STRAIGHT</item>
+        <item>GAY</item>
+        <item>BISEXUAL</item>
+    </string-array>
+</resources>

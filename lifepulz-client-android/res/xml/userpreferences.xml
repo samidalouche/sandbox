@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Settings">
+        <PreferenceScreen android:title="Authentication" >
+            <EditTextPreference
+                android:key="PREF_LOGIN"
+                android:title="Login"
+                android:summary="Login to connect to LifePulz"  />  
+            <EditTextPreference
+                android:key="PREF_PASSWORD"
+                android:title="Password"
+                android:summary="Password to connect to LifePulz" 
+                android:dependency="PREF_LOGIN" />  
+            <EditTextPreference
+                android:key="PREF_ALIAS"
+                android:title="Alias"
+                android:summary="Public alias other members will see" />  
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Server Configuration" >
+            <EditTextPreference
+                android:key="PREF_GATEWAY_URL"
+                android:title="Lifepulz Server Url"
+                android:summary="Enter the URL of the lifepulz server"
+				android:defaultValue="http://www.lifepulz.com"  />  
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>
